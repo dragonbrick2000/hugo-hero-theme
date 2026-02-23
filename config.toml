@@ -34,27 +34,27 @@ title = "Dragonbrick"
 
 [[menu.main]]
 	name = "Dịch vụ order"
-	url = "/services/"
+	url = "/Dich vu order/"
     weight = 1
 
 [[menu.main]]
     name = "Cửa hàng"
-    url = "/work/"
+    url = "/Cua hang/"
     weight = 2
 
 [[menu.main]]
     name = "Danh mục"
-    url = "/about/"
+    url = "/Danh muc/"
     weight = 3
 
 [[menu.main]]
     name = "Về Dragon Brick"
-    url = "/history/"
+    url = "/Ve Dragon Brick/"
     weight = 3
 
 [[menu.main]]
     name = "Liên hệ"
-    url = "/contact/"
+    url = "/Lien hect/"
     weight = 4
 
 [permalinks]
