@@ -24,18 +24,17 @@
     }
       }
       &.active {
-        > a {
-          background: $primary;
-          text-decoration: none;
-          color: #ffffff;
-          &:hover {
-            text-decoration: none;
-            background: $primary;
-            transition: all 225ms ease-in 0s;
-            color: #ffffff;
-          }
+      > a {
+        background: #000000 !important;
+        color: #ffffff !important;
+        text-decoration: none;
+
+        &:hover {
+          background: #000000 !important;
+          color: #ffffff !important;
         }
       }
+    }
     }
   }
 }
