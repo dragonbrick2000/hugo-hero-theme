@@ -1,6 +1,6 @@
-baseURL = "https://www.example.com/"
+baseURL = "https://www.Dragonbrick.com/"
 languageCode = "en-us"
-title = "Hugo Hero Theme"
+title = "Dragonbrick"
 theme = "hugo-hero-theme"
 
 [module]
