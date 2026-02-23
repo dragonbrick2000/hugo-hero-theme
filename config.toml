@@ -9,6 +9,7 @@ title = "Dragonbrick"
     min = "0.92.0"
     
 [params]
+  favicon = "1223456.jpg"
   google_analytics_id=""
 
   [params.logo]
