@@ -44,7 +44,7 @@ title = "Dragonbrick"
 
 [[menu.main]]
     name = "Danh mục"
-    url = "/Danh-muc/"
+    url = "/danh-muc/"
     weight = 3
 
 [[menu.main]]
