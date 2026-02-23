@@ -32,27 +32,27 @@ title = "Dragonbrick"
     meta_twitter_creator = "@zerostaticio"
 
 [[menu.main]]
-	name = "Services"
+	name = "Dịch vụ order"
 	url = "/services/"
     weight = 1
 
 [[menu.main]]
-    name = "Work"
+    name = "Cửa hàng"
     url = "/work/"
     weight = 2
 
 [[menu.main]]
-    name = "About"
+    name = "Danh mục"
     url = "/about/"
     weight = 3
 
 [[menu.main]]
-    name = "History"
+    name = "Về Dragon Brick"
     url = "/history/"
     weight = 3
 
 [[menu.main]]
-    name = "Contact"
+    name = "Liên hệ"
     url = "/contact/"
     weight = 4
 
