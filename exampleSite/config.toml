@@ -1,7 +1,7 @@
 baseURL = "https://www.Dragonbrick.com/"
 languageCode = "en-us"
 title = "Dragonbrick"
-theme = "hugo-hero-theme"
+theme = "../.."
 
 [module]
   [module.hugoVersion]
