@@ -12,9 +12,9 @@
   -webkit-transition: all 0.15s ease;
   transition: all 0.15s ease;
   &:hover {
-    color: #fff;
+    color: #fff !important;
     background-color: #000000 !important;
-    text-decoration: none;
+    text-decoration: none !important;
   }
 }
 .button-white {
