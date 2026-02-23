@@ -10,6 +10,7 @@ title = "Dragonbrick"
     
 [params]
   google_analytics_id=""
+  favicon = "1223456.jpg"
 
   [params.logo]
     mobile = "dragon.jpg"
