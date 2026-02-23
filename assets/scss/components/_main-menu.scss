@@ -17,7 +17,7 @@
         text-transform: uppercase;
         text-decoration: none;
         color: #cc0000 !important;
-        &:hover {
+        &:hover, &:active, &:focus {
       background: #000000 !important;
       color: #ffffff;
       text-decoration: none;
