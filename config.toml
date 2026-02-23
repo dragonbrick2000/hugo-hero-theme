@@ -9,7 +9,6 @@ title = "Dragonbrick"
     min = "0.92.0"
     
 [params]
-  favicon = "1223456.jpg"
   google_analytics_id=""
 
   [params.logo]
@@ -22,10 +21,10 @@ title = "Dragonbrick"
     alt = "Dragon Brick logo"
 
   [params.homepage_meta_tags]
-    meta_description = "Hero is a multipurpose Hugo theme with fullscreen hero images and page sections. It contains content types for a business or portfolio site."
-    meta_og_title = "Hugo Hero Theme"
+    meta_description = "Dragon Brick - Chuyên đồ chơi LEGO chính hãng, Chất lượng tốt nhất 'earth 616'"
+    meta_og_title = "Dragon Brick - Ghép đam mê, xây giấc mơ"
     meta_og_type = "website"
-    meta_og_url = "https://hugo-hero.netlify.app"
+    meta_og_url = "https://dragonbrick.vercel.app"
     meta_og_image = "https://raw.githubusercontent.com/JugglerX/hugo-hero-theme/master/images/tn.png"
     meta_og_description = "Hero is a multipurpose Hugo theme with fullscreen hero images and page sections. It contains content types for a business or portfolio site."
     meta_twitter_card = "summary"
