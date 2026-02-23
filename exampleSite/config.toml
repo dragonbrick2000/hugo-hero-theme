@@ -12,10 +12,10 @@ theme = "hugo-hero-theme"
   google_analytics_id=""
 
   [params.logo]
-    mobile = "logo-dragon.jpg"
+    mobile = "dragon.jpg"
     mobile_height = "36px"
     mobile_width = "36px"
-    desktop = "logo-dragon.jpg"
+    desktop = "dragon.jpg"
     desktop_height = "80px"
     desktop_width = "auto"
     alt = "Dragon Brick logo"
