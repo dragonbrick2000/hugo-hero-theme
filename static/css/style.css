@@ -99,3 +99,40 @@ nav a:hover {
         flex-shrink: 0 !important; /* Ép nút không bị bóp méo */
     }
 }
+@media (max-width: 768px) {
+    nav {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        /* Ép trình duyệt luôn luôn nhận diện việc vuốt ngang */
+        touch-action: pan-x; 
+        -webkit-overflow-scrolling: touch;
+        gap: 12px;
+        padding-bottom: 20px !important; /* Tạo vùng đệm lớn để ngón tay dễ chạm */
+    }
+
+    /* Tăng kích cỡ thanh cuộn để dễ tương tác */
+    nav::-webkit-scrollbar {
+        height: 12px !important; 
+        display: block !important;
+    }
+
+    nav::-webkit-scrollbar-track {
+        background: #f0f0f0;
+        border-radius: 10px;
+    }
+
+    nav::-webkit-scrollbar-thumb {
+        background-color: #a9a9a9;
+        background-image: radial-gradient(#777777 2px, transparent 2px);
+        background-size: 7px 7px;
+        border-radius: 10px;
+        /* Tạo khoảng cách để thanh cuộn trông không bị quá to thô kệch */
+        border: 2px solid #f0f0f0;
+    }
+
+    /* Quan trọng: Khi ngón tay chạm vào vùng này, thanh cuộn phải phản hồi */
+    nav::-webkit-scrollbar-thumb:active {
+        background-color: #d40000 !important;
+    }
+}
