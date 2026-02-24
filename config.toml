@@ -1,7 +1,7 @@
 baseURL = "https://dragonbrick.vercel.app/"
 dataDir = "data"
 languageCode = "en-us"
-title = "Dragonbrick Test 1"
+title = "Dragonbrick"
 
 [module]
   [module.hugoVersion]
@@ -62,3 +62,4 @@ title = "Dragonbrick Test 1"
 [permalinks]
   post = "/:year/:month/:day/:slug/"
   pages = "/:filename/"
+# update menu
