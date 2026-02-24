@@ -1,9 +1,16 @@
 {{ define "main" }}
   <div class="dragon-hero">
     <h1>{{ .Title }}</h1>
+    <p>Ghép đam mê, xây giấc mơ</p>
   </div>
 
-  <div class="container content-section">
+  <div class="content-section">
     {{ .Content }}
   </div>
+
+  {{ if .Site.Params.homepage_features }}
+    <div class="features-container">
+      {{ partial "features.html" . }}
+    </div>
+  {{ end }}
 {{ end }}

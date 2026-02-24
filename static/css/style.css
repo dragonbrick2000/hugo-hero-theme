@@ -1,17 +1,47 @@
-/* Thiết lập cho phần ảnh nền Hero */
+/* Tổng thể trang web */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* Phần ảnh nền Hero */
 .dragon-hero {
-    background-image: url("/Background.png");
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/Background.png");
     background-size: cover;
     background-position: center;
-    min-height: 100vh; /* Làm trang web dài ra bằng chiều cao màn hình */
+    background-attachment: fixed; /* Tạo hiệu ứng cuộn ảnh nền xịn */
+    height: 80vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     color: white;
+    text-align: center;
+    padding: 0 20px;
 }
 
+.dragon-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+/* Phần nội dung chữ */
 .content-section {
-    padding: 50px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
     line-height: 1.8;
-    font-size: 18px;
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+/* 3 Cột Features (Nếu bạn muốn hiện icon LEGO) */
+.features-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    background: #f9f9f9;
 }
