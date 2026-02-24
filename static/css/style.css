@@ -133,3 +133,18 @@
         text-align: center !important;
     }
 }
+/* LÀM SÁNG BACKGROUND TRÊN CẢ MÁY TÍNH VÀ ĐIỆN THOẠI */
+div[style*="Background.png"] {
+    /* Loại bỏ hoàn toàn lớp phủ màu đen, chỉ giữ lại hình gốc */
+    background-image: url('/Background.png') !important;
+    background-color: transparent !important;
+    
+    /* Nếu ba vẫn muốn chữ dễ đọc nhưng ảnh vẫn sáng, hãy dùng độ mờ 10% thay vì 40% */
+    /* background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('/Background.png') !important; */
+}
+
+/* Đảm bảo chữ tiêu đề vẫn nổi bật khi ảnh sáng lên */
+div[style*="Background.png"] h1 {
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.8) !important; /* Thêm bóng cho chữ thay vì làm tối cả ảnh */
+    color: #ffffff !important;
+}
