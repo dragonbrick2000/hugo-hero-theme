@@ -1,18 +1,9 @@
 {{ define "main" }}
-  {{/* Gọi ảnh nền */}}
-  {{ partial "hero-image-fullscreen.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "content" .)}}
-
-  {{/* Hiện nội dung chữ "Chào mừng..." từ _index.md để web dài ra */}}
-  <div class="container pt-8 pb-8">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-10">
-        <div class="content">{{ .Content }}</div>
-      </div>
-    </div>
+  <div class="dragon-hero">
+    <h1>{{ .Title }}</h1>
   </div>
 
-  {{/* Hiện 3 cột icon LEGO từ file features.yml */}}
-  {{ if .Site.Params.homepage_features }}
-    {{ partial "features.html" . }}
-  {{ end }}
+  <div class="container content-section">
+    {{ .Content }}
+  </div>
 {{ end }}

@@ -9,13 +9,7 @@
   {{ block "meta_tags" . }}{{end}}
   <link rel="icon" href="{{ .Site.BaseURL }}favicon.png">
 
-  {{ if .Site.IsServer }}
-  {{ $style := resources.Get "scss/style.scss" | toCSS }}
-  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
-{{ else }}
-  <link rel="stylesheet" href="/css/style.css"> 
-{{ end }}
-
+  <link rel="stylesheet" href="/css/style.css">
   {{ block "header_css" . }}{{ end }}
 
 </head>

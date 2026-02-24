@@ -1,0 +1,17 @@
+/* Thiết lập cho phần ảnh nền Hero */
+.dragon-hero {
+    background-image: url("/Background.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /* Làm trang web dài ra bằng chiều cao màn hình */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.content-section {
+    padding: 50px 20px;
+    line-height: 1.8;
+    font-size: 18px;
+}
