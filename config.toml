@@ -11,6 +11,7 @@ title = "Dragonbrick"
     
 [params]
   homepage_features = true
+  homepage_services = true
   google_analytics_id=""
   favicon = "favicon.png"
 
