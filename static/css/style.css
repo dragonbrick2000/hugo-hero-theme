@@ -45,3 +45,19 @@ body {
     padding: 40px;
     background: #f9f9f9;
 }
+/* Tạo khoảng cách giữa các đoạn văn cho thoáng */
+p {
+    margin-bottom: 25px;
+}
+
+/* Hiệu ứng di chuột cho mấy cái nút menu */
+nav a:hover {
+    color: #ffcf00 !important; /* Màu vàng LEGO */
+    transition: 0.3s;
+}
+
+/* Đảm bảo trang web luôn dài ra ít nhất bằng màn hình */
+body {
+    min-height: 100vh;
+    background-color: #ffffff;
+}
