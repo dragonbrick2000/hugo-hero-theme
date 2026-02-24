@@ -92,3 +92,43 @@ nav a:hover {
     
     background-color: transparent; 
 }
+/* --- PHẦN DÀNH CHO ĐIỆN THOẠI --- */
+@media (max-width: 768px) {
+    /* 1. Header dàn lại hàng dọc cho đỡ chật */
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* 2. Thu nhỏ logo */
+    header img {
+        height: 40px;
+        margin-bottom: 15px;
+    }
+
+    /* 3. Menu dàn hàng ngang nhỏ lại hoặc cho xuống dòng */
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    nav a {
+        margin-left: 0;
+        font-size: 11px; /* Chữ nhỏ lại cho vừa màn hình */
+        padding: 5px 10px;
+    }
+
+    /* 4. Fix ảnh nền không bị cắt mất hình LEGO */
+    .dragon-hero {
+        height: 300px !important; /* Hạ chiều cao trên điện thoại */
+        background-attachment: scroll !important; /* Bỏ hiệu ứng fixed để mượt hơn */
+    }
+
+    /* 5. 3 cột Features thành 1 cột */
+    .features-container {
+        grid-template-columns: 1fr !important;
+        padding: 20px;
+    }
+}
