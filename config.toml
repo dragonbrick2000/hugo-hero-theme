@@ -3,6 +3,7 @@ dataDir = "data"
 languageCode = "en-us"
 title = "Dragonbrick"
 themesDir = "."
+theme = "."
 
 [module]
   [module.hugoVersion]

@@ -4,7 +4,7 @@ type: "home"
 layout: "home"
 heroHeading: ""
 heroSubHeading: ""
-heroOverlay: true  # Đổi thành true để chữ hiện rõ trên ảnh
+heroOverlay: true
 heroBackground: "Background.png"
 ---
 
