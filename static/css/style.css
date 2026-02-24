@@ -156,3 +156,48 @@ nav a:hover {
         flex-shrink: 0 !important;
     }
 }
+@media (max-width: 768px) {
+    nav {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important; /* Đây chính là lệnh cho phép kéo tay */
+        -webkit-overflow-scrolling: touch; /* Giúp việc kéo mượt như bơ */
+        gap: 12px;
+        /* Tăng vùng đệm phía dưới để khách dễ chạm trúng cái "bánh răng" */
+        padding-bottom: 20px; 
+        margin-bottom: -10px;
+    }
+
+    /* Làm cho cái "Bánh răng" to và dễ tương tác hơn */
+    nav::-webkit-scrollbar {
+        height: 10px; /* Tăng độ dày để ngón tay dễ chạm trúng */
+        display: block;
+    }
+
+    nav::-webkit-scrollbar-track {
+        background: #f0f0f0;
+        border-radius: 10px;
+        margin: 0 10px;
+    }
+
+    nav::-webkit-scrollbar-thumb {
+        background-color: #a9a9a9;
+        /* Giữ nguyên họa tiết lỗ bánh răng Technic */
+        background-image: radial-gradient(#777777 2px, transparent 2px);
+        background-size: 6px 6px;
+        border: 2px solid #f0f0f0; /* Tạo khoảng trắng giả để thanh cuộn trông thanh thoát */
+        border-radius: 10px;
+    }
+
+    /* Hiệu ứng khi khách đang giữ tay vào kéo */
+    nav::-webkit-scrollbar-thumb:active {
+        background-color: #d40000; /* Đổi sang màu đỏ khi đang kéo cho "máu" */
+    }
+
+    nav a {
+        flex-shrink: 0 !important;
+        /* Giữ dáng gạch 1x2 như mình đã chốt */
+        padding: 8px 18px !important;
+        border-radius: 20px !important;
+    }
+}
