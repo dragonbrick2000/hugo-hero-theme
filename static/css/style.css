@@ -1,276 +1,44 @@
-/* --- 1. CÀI ĐẶT CƠ BẢN --- */
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fff;
-    color: #333;
-}
+/* --- TỔNG THỂ --- */
+body { margin: 0; font-family: sans-serif; background: #fff; }
 
-/* --- 2. HEADER & MENU MÁY TÍNH (DESKTOP) --- */
+/* --- HEADER MÁY TÍNH --- */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    background: #ffffff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 5%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky; top: 0; z-index: 1000;
 }
-
-header img {
-    height: 50px;
-    width: auto;
-}
-
-nav {
-    display: flex;
-    gap: 15px;
-}
-
+header img { height: 50px; width: auto; }
+nav { display: flex; gap: 15px; }
 nav a {
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 14px;
-    padding: 10px 22px; /* Tỷ lệ gạch 1x2 */
-    border-radius: 25px; /* Bo tròn gạch LEGO */
-    transition: all 0.3s ease;
-    
-    /* Mặc định: Chữ ĐỎ, Khung ẩn */
-    color: #d40000 !important;
-    border: 2px solid transparent;
+    text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 14px;
+    padding: 10px 22px; border-radius: 25px; transition: 0.3s;
+    color: #d40000 !important; border: 2px solid transparent;
 }
+nav a:hover { border: 2px solid #000; }
 
-/* Hover: Chữ giữ đỏ, hiện khung đen */
-nav a:hover {
-    color: #d40000 !important;
-    border: 2px solid #000000;
-}
-
-/* --- 3. GIAO DIỆN DI ĐỘNG (MOBILE) --- */
+/* --- MOBILE (VUỐT NGANG + HIỆU ỨNG CHÀO HỎI) --- */
 @media (max-width: 768px) {
-    header {
-        padding: 10px 15px !important;
-    }
-
-    header img {
-        height: 35px !important;
-    }
+    header { padding: 10px 15px !important; gap: 10px; }
+    header img { height: 35px !important; }
 
     nav {
-        display: flex !important;
-        flex-wrap: nowrap !important; /* Cấm xuống dòng để trượt */
-        overflow-x: auto !important; /* Kích hoạt kéo tay */
-        -webkit-overflow-scrolling: touch;
-        gap: 10px;
-        padding-bottom: 15px; /* Chừa chỗ cho thanh cuộn */
+        display: flex !important; overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch; gap: 10px; flex-grow: 1;
+        scrollbar-width: none; /* Ẩn thanh cuộn */
+        padding: 5px 0; align-items: center;
     }
+    nav::-webkit-scrollbar { display: none; }
 
-    /* THANH CUỘN KIỂU BÁNH RĂNG TECHNIC */
-    nav::-webkit-scrollbar {
-        height: 8px;
-        display: block;
-    }
-
-    nav::-webkit-scrollbar-track {
-        background: #f0f0f0;
-        border-radius: 10px;
-    }
-
-    nav::-webkit-scrollbar-thumb {
-        background-color: #a9a9a9; /* Màu xám Technic */
-        background-image: radial-gradient(#777777 1.5px, transparent 1.5px); /* Chấm lỗ bánh răng */
-        background-size: 6px 6px;
-        border-radius: 10px;
-        border: 2px solid #f0f0f0;
-    }
-
-    /* Phản hồi khi khách chạm tay kéo bánh răng */
-    nav::-webkit-scrollbar-thumb:active {
-        background-color: #d40000; /* Đổi sang đỏ khi đang kéo */
+    /* Hiệu ứng rung nhẹ khi vừa load trang để khách biết là vuốt được */
+    .nav-hint { animation: hintSlide 1.5s ease-in-out; }
+    @keyframes hintSlide {
+        0%, 100% { transform: translateX(0); }
+        30% { transform: translateX(-25px); }
+        60% { transform: translateX(5px); }
     }
 
     nav a {
-        font-size: 12px !important;
-        padding: 8px 18px !important;
-        border-radius: 20px !important;
-        flex-shrink: 0 !important; /* Ép nút không bị bóp méo */
-    }
-}
-@media (max-width: 768px) {
-    nav {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
-        /* Ép trình duyệt luôn luôn nhận diện việc vuốt ngang */
-        touch-action: pan-x; 
-        -webkit-overflow-scrolling: touch;
-        gap: 12px;
-        padding-bottom: 20px !important; /* Tạo vùng đệm lớn để ngón tay dễ chạm */
-    }
-
-    /* Tăng kích cỡ thanh cuộn để dễ tương tác */
-    nav::-webkit-scrollbar {
-        height: 12px !important; 
-        display: block !important;
-    }
-
-    nav::-webkit-scrollbar-track {
-        background: #f0f0f0;
-        border-radius: 10px;
-    }
-
-    nav::-webkit-scrollbar-thumb {
-        background-color: #a9a9a9;
-        background-image: radial-gradient(#777777 2px, transparent 2px);
-        background-size: 7px 7px;
-        border-radius: 10px;
-        /* Tạo khoảng cách để thanh cuộn trông không bị quá to thô kệch */
-        border: 2px solid #f0f0f0;
-    }
-
-    /* Quan trọng: Khi ngón tay chạm vào vùng này, thanh cuộn phải phản hồi */
-    nav::-webkit-scrollbar-thumb:active {
-        background-color: #d40000 !important;
-    }
-}
-@media (max-width: 768px) {
-    nav {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
-        
-        /* 1. KHỬ RÍCH: Tạo đà trượt khi buông tay */
-        -webkit-overflow-scrolling: touch !important; 
-        scroll-behavior: smooth;
-        
-        /* 2. HIỆU ỨNG HÍT: Giúp các nút tự dừng lại ở vị trí đẹp */
-        scroll-snap-type: x mandatory; 
-        
-        touch-action: pan-x;
-        gap: 12px;
-        padding-bottom: 20px !important;
-    }
-
-    nav a {
-        flex-shrink: 0 !important;
-        /* Giúp nút "hít" vào lề khi dừng lại */
-        scroll-snap-align: start; 
-        
-        font-size: 12px !important;
-        padding: 8px 18px !important;
-        border-radius: 20px !important;
-        white-space: nowrap !important;
-    }
-
-    /* 3. LÀM MƯỢT THANH CUỘN */
-    nav::-webkit-scrollbar {
-        height: 8px !important;
-    }
-
-    nav::-webkit-scrollbar-thumb {
-        background-color: #a9a9a9;
-        /* Giảm bớt độ phức tạp của gradient để trượt nhẹ máy hơn */
-        background-image: radial-gradient(#777777 1px, transparent 1px);
-        background-size: 5px 5px;
-        border-radius: 10px;
-    }
-}
-@media (max-width: 768px) {
-    nav {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        /* Tạo khoảng cách rộng rãi để ngón tay không bị chạm nhầm lên menu */
-        gap: 15px;
-        padding-bottom: 25px !important; 
-        margin-bottom: -10px;
-        scroll-behavior: smooth;
-        touch-action: pan-x;
-    }
-
-    /* LÀM CHO "BÁNH RĂNG" TO VÀ DỄ CHẠM HƠN */
-    nav::-webkit-scrollbar {
-        height: 12px !important; /* Tăng độ dày để vùng nhận diện rộng hơn */
-        display: block !important;
-    }
-
-    nav::-webkit-scrollbar-track {
-        background: #f8f8f8; /* Màu nền đường ray nhạt hơn cho thoáng */
-        border-radius: 10px;
-        margin: 0 10px;
-    }
-
-    nav::-webkit-scrollbar-thumb {
-        background-color: #b0b0b0;
-        /* Họa tiết bánh răng Technic rõ nét hơn */
-        background-image: radial-gradient(#666666 1.5px, transparent 1.5px);
-        background-size: 8px 8px;
-        border-radius: 10px;
-        /* Tạo khoảng đệm (border) dày để trông thanh cuộn vẫn mảnh mai nhưng vùng chạm thực tế rất to */
-        border: 3px solid #f8f8f8; 
-    }
-
-    /* Phản hồi cực nhạy khi chạm vào kéo */
-    nav::-webkit-scrollbar-thumb:active {
-        background-color: #d40000 !important;
-        background-image: radial-gradient(#ffffff 1.5px, transparent 1.5px);
-    }
-
-    nav a {
-        flex-shrink: 0 !important;
-        font-size: 13px !important;
-        padding: 8px 20px !important;
-        border-radius: 20px !important;
-        /* Đảm bảo chữ không bị đè lên vùng bánh răng */
-        margin-bottom: 5px; 
-    }
-}
-@media (max-width: 768px) {
-    header {
-        display: flex !important;
-        flex-direction: row !important;
-        /* Căn giữa tất cả các thành phần theo trục dọc */
-        align-items: center !important; 
-        padding: 10px 15px !important;
-        height: 60px; /* Cố định chiều cao header để dễ căn chỉnh */
-    }
-
-    header img {
-        height: 35px !important;
-        flex-shrink: 0 !important;
-    }
-
-    nav {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        gap: 12px;
-        
-        /* CĂN CHỈNH QUAN TRỌNG TẠI ĐÂY */
-        align-items: center !important; /* Căn nút menu vào giữa */
-        margin-top: 5px; /* Nhích nhẹ xuống để bằng vai với logo */
-        padding-bottom: 15px !important; /* Thu hẹp lại một chút để không đẩy menu lên cao */
-        
-        flex-grow: 1; /* Cho phép menu chiếm không gian còn lại */
-    }
-
-    /* Giữ nguyên cái bánh răng Technic bên dưới */
-    nav::-webkit-scrollbar {
-        height: 8px !important;
-    }
-
-    nav a {
-        flex-shrink: 0 !important;
-        font-size: 12px !important;
-        padding: 6px 16px !important; /* Thu gọn padding để nhìn thanh thoát hơn */
-        border-radius: 20px !important;
-        /* Đảm bảo chữ đứng thẳng hàng */
-        display: flex;
-        align-items: center;
+        flex-shrink: 0 !important; font-size: 12px !important;
+        padding: 8px 18px !important; border-radius: 20px !important;
     }
 }
