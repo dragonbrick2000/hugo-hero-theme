@@ -42,3 +42,20 @@ nav a:hover { border: 2px solid #000; }
         padding: 8px 18px !important; border-radius: 20px !important;
     }
 }
+@media (max-width: 768px) {
+    /* Ép hiển thị và chạy animation */
+    .main-menu.nav-hint {
+        display: flex !important;
+        animation: hintSlide 2s ease-in-out !important;
+        animation-delay: 0.5s; /* Đợi load trang xong 0.5s mới rung */
+    }
+
+    @keyframes hintSlide {
+        0% { transform: translateX(0); }
+        20% { transform: translateX(-50px); } /* Rung mạnh sang trái */
+        40% { transform: translateX(10px); }  /* Nhảy nhẹ sang phải */
+        60% { transform: translateX(-15px); } /* Rung nhẹ lại */
+        80% { transform: translateX(5px); }
+        100% { transform: translateX(0); }
+    }
+}
