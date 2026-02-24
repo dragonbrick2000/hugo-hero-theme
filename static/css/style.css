@@ -265,3 +265,61 @@ nav a:hover {
         border: 2px solid #000000 !important;
     }
 }
+/* --- MENU TRƯỢT NGANG MOBILE CÓ CHỈ BÁO --- */
+@media (max-width: 768px) {
+    header {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        padding: 10px 15px !important;
+        /* Tạo hiệu ứng mờ bên phải để khách biết còn nút phía sau */
+        background: linear-gradient(to left, rgba(255,255,255,0) 10%, #ffffff 0%) !important;
+        position: relative;
+    }
+
+    header img {
+        height: 30px !important;
+        flex-shrink: 0 !important;
+        margin-right: 10px;
+    }
+
+    nav {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        gap: 10px;
+        padding: 10px 0;
+        /* Hiện thanh cuộn mờ mờ để khách biết mà trượt */
+        scrollbar-width: thin; 
+        scrollbar-color: #d40000 transparent;
+    }
+
+    /* Làm thanh cuộn hiện ra đẹp hơn trên Chrome/Safari điện thoại */
+    nav::-webkit-scrollbar {
+        height: 3px; /* Thanh cuộn siêu mỏng */
+        display: block; /* Hiện lên cho khách thấy */
+    }
+    nav::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    nav::-webkit-scrollbar-thumb {
+        background: #d40000; /* Màu đỏ LEGO cho thanh cuộn */
+        border-radius: 10px;
+    }
+
+    nav a {
+        flex-shrink: 0 !important;
+        font-size: 12px !important;
+        padding: 6px 12px !important;
+        color: #d40000 !important;
+        border: 2px solid transparent;
+        white-space: nowrap !important;
+        background: #fff; /* Đảm bảo nút không bị xuyên thấu */
+    }
+
+    /* Hiệu ứng khung đen khi click vào nút */
+    nav a:active {
+        border: 2px solid #000000 !important;
+    }
+}
