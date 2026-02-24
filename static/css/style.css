@@ -132,3 +132,41 @@ nav a:hover {
         padding: 20px;
     }
 }
+/* --- PHẦN FIX ĐIỆN THOẠI GIỐNG MÁY TÍNH --- */
+@media (max-width: 768px) {
+    /* 1. Ép Header luôn dàn hàng ngang, không cho nhảy dọc */
+    header {
+        display: flex !important;
+        flex-direction: row !important; /* Ép nằm ngang */
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 10px 3% !important;
+        white-space: nowrap; /* Không cho chữ xuống dòng */
+    }
+
+    /* 2. Thu nhỏ Logo để nhường chỗ cho Menu */
+    header img {
+        height: 30px !important; /* Bé lại một chút để không chiếm chỗ */
+        width: auto;
+    }
+
+    /* 3. Dàn Menu hàng ngang siêu gọn */
+    nav {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 8px; /* Khoảng cách nhỏ giữa các nút */
+    }
+
+    nav a {
+        margin-left: 0 !important;
+        font-size: 9px !important; /* Chữ nhỏ lại để vừa một hàng */
+        padding: 4px 6px !important;
+        border-width: 1px !important; /* Khung mảnh hơn cho tinh tế */
+    }
+
+    /* 4. Fix ảnh nền LEGO hiện đầy đủ hơn */
+    .dragon-hero {
+        height: 250px !important;
+        background-size: cover;
+    }
+}
