@@ -1,22 +1,24 @@
-<div class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="footer-inner">
-          {{ if .Site.Data.social }}
-          <ul class="social">
-              {{ range .Site.Data.social }}
-                  <li><a href="{{ .link }}" target="blank"><img width="20" height="20" src="{{ .image | relURL }}" title="{{ .name }}" alt="{{ .name }}" /></a></li>
-              {{ end }}
-          </ul>
-          {{ end }}
-          <ul class="footer-menu">
-            <li><a href="{{ .Site.BaseURL }}">Home</a></li>
-            <li><a href="{{ .Site.BaseURL }}contact">Contact</a></li>
-            <li class="copyright">© {{ now.Format "2006" }} {{.Site.Title}}</li>
-          </ul>
+<footer style="background-color: #1a1a1a; color: #ffffff; padding: 40px 20px; text-align: center; border-top: 5px solid #d40000;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <h3 style="color: #d40000; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px;">Dragon Brick</h3>
+        
+        <p style="font-size: 16px; font-weight: bold; margin-bottom: 25px; opacity: 0.9;">
+            Ghép đam mê - Xây giấc mơ
+        </p>
+
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 25px;">
+            <span style="background: #333; padding: 8px 20px; border-radius: 20px; font-size: 14px; border: 1px solid #444;">
+                📧 {{ .Site.Params.email | default "dragonbrick2000@gmail.com" }}
+            </span>
+            <span style="background: #333; padding: 8px 20px; border-radius: 20px; font-size: 14px; border: 1px solid #444;">
+                📞 {{ .Site.Params.phone | default "(+84) 898992595" }}
+            </span>
         </div>
-      </div>
+
+        <hr style="border: 0; border-top: 1px solid #333; margin-bottom: 20px; width: 50%; margin-left: auto; margin-right: auto;">
+
+        <p style="font-size: 12px; opacity: 0.6; margin: 0;">
+            &copy; {{ now.Format "2006" }} <strong>Dragon Brick</strong>. All Rights Reserved.
+        </p>
     </div>
-  </div>
-</div>
+</footer>
