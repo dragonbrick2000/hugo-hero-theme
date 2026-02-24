@@ -220,3 +220,48 @@ nav a:hover {
         border: 2px solid #000000 !important;
     }
 }
+/* --- HIỆU ỨNG TRƯỢT NGANG MOBILE - FIX CHUẨN --- */
+@media (max-width: 768px) {
+    header {
+        display: flex !important;
+        flex-direction: row !important; /* Luôn nằm ngang */
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 10px 15px !important;
+        gap: 15px; /* Tạo khoảng cách giữa logo và dãy menu */
+    }
+
+    header img {
+        height: 35px !important;
+        flex-shrink: 0 !important; /* KHÔNG cho logo bị bóp nhỏ */
+    }
+
+    nav {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important; /* LỆNH QUAN TRỌNG: Cấm tuyệt đối xuống dòng */
+        overflow-x: auto !important; /* Bắt buộc hiện thanh cuộn ngang khi thừa chữ */
+        -webkit-overflow-scrolling: touch; /* Vuốt mượt như app */
+        gap: 12px;
+        padding: 5px 0;
+    }
+
+    /* Ẩn thanh cuộn để nhìn cho sạch web */
+    nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav a {
+        flex-shrink: 0 !important; /* LỆNH QUAN TRỌNG: Giữ nguyên kích thước nút, không cho co lại */
+        font-size: 13px !important;
+        padding: 6px 12px !important;
+        color: #d40000 !important;
+        border: 2px solid transparent;
+        white-space: nowrap !important; /* Cấm chữ trong nút bị nhảy dòng */
+    }
+
+    /* Hiệu ứng khung đen khi chạm vào trên điện thoại */
+    nav a:active {
+        border: 2px solid #000000 !important;
+    }
+}
