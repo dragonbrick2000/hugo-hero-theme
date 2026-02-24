@@ -1,11 +1,8 @@
 ---
-title: "Dragonbrick - Ghép đam mê, xây giấc mơ"
-type: "home"
+title: "Dragonbrick"
 layout: "home"
-heroHeading: ""
-heroSubHeading: ""
+heroBackground: "Background.png" 
 heroOverlay: true
-heroBackground: "Background.png"
 ---
 
 

@@ -1,37 +1,18 @@
-{{ define "title" }}{{ .Site.Title }}{{ end}}
-{{ define "header_css" }}{{ end }}
-{{ define "body_classes" }}page-home{{ end }}
-{{ define "header_classes" }}header-transparent{{ end }}
-
-{{ define "meta_tags" }}
-<meta name="description" content="{{ .Site.Params.homepage_meta_tags.meta_description }}" />
-<meta property="og:title" content="{{ .Site.Params.homepage_meta_tags.meta_og_title }}" />
-<meta property="og:type" content="{{ .Site.Params.homepage_meta_tags.meta_og_type }}" />
-<meta property="og:url" content="{{ .Site.Params.homepage_meta_tags.meta_og_url }}" />
-<meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image }}" />
-<meta property="og:description" content="{{ .Site.Params.homepage_meta_tags.meta_og_description }}" />
-<meta name="twitter:card" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_card }}" />
-<meta name="twitter:site" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_site }}" />
-<meta name="twitter:creator" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_creator }}" />
-{{ end }}
-
 {{ define "main" }}
+  {{/* Gọi ảnh nền */}}
+  {{ partial "hero-image-fullscreen.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "content" .)}}
 
-{{/* Gọi ảnh nền từ file _index.md */}}
-{{ partial "hero-image-fullscreen.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "content" .)}}
-
-{{/* PHẦN QUAN TRỌNG: Hiện nội dung chữ bạn đã dán rất nhiều */}}
-<div class="container pt-8 pb-8">
-  <div class="row">
-    <div class="col-12">
-      <div class="content">{{ .Content }}</div>
+  {{/* Hiện nội dung chữ "Chào mừng..." từ _index.md để web dài ra */}}
+  <div class="container pt-8 pb-8">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10">
+        <div class="content">{{ .Content }}</div>
+      </div>
     </div>
   </div>
-</div>
 
-{{/* Gọi 3 cột Features từ data/features.yml */}}
-{{ if .Site.Params.homepage_features }}
-  {{ partial "features.html" . }}
-{{ end }}
-
+  {{/* Hiện 3 cột icon LEGO từ file features.yml */}}
+  {{ if .Site.Params.homepage_features }}
+    {{ partial "features.html" . }}
+  {{ end }}
 {{ end }}
