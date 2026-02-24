@@ -1,4 +1,4 @@
-baseURL = "https://dragonbrick.vercel.app/"
+baseURL = "/"
 languageCode = "en-us"
 title = "Dragonbrick"
 
