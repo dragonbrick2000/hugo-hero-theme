@@ -231,3 +231,27 @@ footer::after {
     margin-top: 30px;
     opacity: 0.3;
 }
+/* 1. GIẤU TOÀN BỘ NỘI DUNG CŨ TRONG THẺ P */
+footer p, .footer p {
+    font-size: 0 !important; /* Biến chữ cũ thành tàng hình */
+    color: transparent !important;
+    visibility: hidden !important;
+    margin: 0 !important;
+}
+/* 1. GIẤU TOÀN BỘ NỘI DUNG CŨ TRONG THẺ P */
+footer p, .footer p {
+    font-size: 0 !important; /* Biến chữ cũ thành tàng hình */
+    color: transparent !important;
+    visibility: hidden !important;
+    margin: 0 !important;
+}
+/* 2. TỰ TẠO DÒNG COPYRIGHT MỚI SẠCH SẼ */
+footer p::before, .footer p::before {
+    content: "© 2026 Dragon Brick" !important; /* Chỉ giữ lại nội dung này */
+    font-size: 14px !important; /* Cho hiện lại cỡ chữ bình thường */
+    visibility: visible !important;
+    display: block !important;
+    color: #ffffff !important; /* Màu trắng cho nổi trên nền đen */
+    padding-bottom: 10px !important;
+    font-weight: 500 !important;
+}
