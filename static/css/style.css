@@ -40,3 +40,12 @@ header img {
     line-height: 2;
     font-size: 1.1rem;
 }
+header nav a:hover {
+    color: #d40000; /* Màu đỏ LEGO khi di chuột */
+    transition: 0.3s;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}

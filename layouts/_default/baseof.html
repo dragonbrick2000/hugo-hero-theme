@@ -1,34 +1,14 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}">
-
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>{{ .Title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
 </head>
-
-<body class='page {{ block "body_classes" . }}{{ end }}'>
-  <div id="wrapper" class="wrapper">
+<body>
+  <div id="wrapper">
     {{ block "main" . }}{{ end }}
   </div>
-</body>
-
-  {{ partial "footer.html" . }}
-  {{ partial "sub-footer.html" . }}
-
-  {{ $scripts := resources.Get "js/scripts.js" }}
-
-  {{ block "footer_js" . }}
-  {{ end }}
-
-  {{ if hugo.IsServer }}
-  <script type="text/javascript" src="{{ $scripts.RelPermalink }}"></script>
-  {{ else }}
-  <script type="text/javascript" src="{{ ($scripts | minify | fingerprint).RelPermalink }}"></script>
-  {{ end }}
-
-  {{ partial "google-analytics.html" . }}
-
 </body>
 </html>
