@@ -1,7 +1,7 @@
 ---
 title: "Dragonbrick - Ghép đam mê, xây giấc mơ"
 type: "home"
-layout: "index"
+layout: "home"
 heroHeading: ""
 heroSubHeading: ""
 heroOverlay: true  # Đổi thành true để chữ hiện rõ trên ảnh
