@@ -5,6 +5,7 @@ layout: "index"
 heroHeading: "DRAGON BRICK"
 heroSubHeading: "Ghép đam mê, xây giấc mơ cùng LEGO"
 heroOverlay: true  # Đổi thành true để chữ hiện rõ trên ảnh
+heroBackground: "Background.png"
 ---
 
 ## Chào mừng bạn đến với Thế giới LEGO của chúng tôi!
