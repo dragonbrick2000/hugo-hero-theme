@@ -74,3 +74,41 @@
         font-weight: bold !important;
     }
 }
+/* --- CHẾ ĐỘ ĐIỆN THOẠI (MOBILE) - THÊM HIỆU ỨNG RUNG --- */
+@media (max-width: 768px) {
+    header nav {
+        display: block !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        flex-grow: 1 !important;
+        margin-left: 10px !important;
+        white-space: nowrap !important;
+        
+        /* 1. Gắn hiệu ứng rung vào đây */
+        animation: slideHint 2s ease-in-out !important;
+        animation-delay: 1s !important; /* Chờ 1 giây sau khi load trang rồi mới rung */
+    }
+
+    header nav::-webkit-scrollbar { display: none !important; }
+
+    /* 2. Định nghĩa cử chỉ "rung" để báo hiệu có thể trượt */
+    @keyframes slideHint {
+        0%, 100% { transform: translateX(0); }
+        30% { transform: translateX(-40px); } /* Nhích sang trái để lộ phần menu ẩn */
+        60% { transform: translateX(10px); }  /* Nhích ngược lại một chút */
+    }
+
+    /* 3. Thêm một chút đổ bóng ở cạnh phải để tạo cảm giác còn nội dung */
+    header nav::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 30px;
+        height: 100%;
+        background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.8));
+        pointer-events: none;
+    }
+}
