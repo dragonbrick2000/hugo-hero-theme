@@ -120,3 +120,39 @@ nav a:hover {
         background-color: #555555;
     }
 }
+/* --- PHẦN MENU KIỂU VIÊN GẠCH LEGO 1x2 --- */
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    
+    /* Chỉnh padding để nút dài ra giống tỷ lệ gạch 1x2 */
+    padding: 10px 22px; 
+    
+    /* Bo tròn mạnh hai đầu để tạo hình viên gạch 1x2 */
+    border-radius: 25px; 
+    
+    transition: all 0.3s ease;
+    
+    /* Mặc định: Chữ ĐỎ, Khung tàng hình */
+    color: #d40000 !important;
+    border: 2px solid transparent;
+    display: inline-block;
+}
+
+/* Hiệu ứng Hover: Hiện khung đen bao quanh viên gạch */
+nav a:hover {
+    border: 2px solid #000000;
+    background-color: rgba(0, 0, 0, 0.02); /* Thêm một chút nền xám nhạt cho nổi khối */
+}
+
+/* --- ĐIỀU CHỈNH RIÊNG CHO MOBILE ĐỂ GIỮ DÁNG GẠCH --- */
+@media (max-width: 768px) {
+    nav a {
+        font-size: 12px !important;
+        padding: 8px 18px !important; /* Thu nhỏ tỷ lệ cho màn hình bé */
+        border-radius: 20px !important;
+        flex-shrink: 0 !important;
+    }
+}
