@@ -231,3 +231,17 @@ footer::after {
     margin-top: 30px;
     opacity: 0.3;
 }
+/* CHIÊU TÀNG HÌNH: GIẤU DÒNG SLOGAN TRONG FOOTER */
+footer p, .footer p {
+    font-size: 0 !important; /* Biến cỡ chữ về 0 để biến mất */
+    visibility: hidden !important; /* Giấu hẳn nó đi */
+}
+
+/* HIỂN THỊ LẠI CHỈ RIÊNG DÒNG COPYRIGHT */
+footer p::before, .footer p::before {
+    content: "© 2026 Dragon Brick"; /* Ghi đè nội dung mới ba muốn giữ lại */
+    font-size: 14px !important; /* Cho hiện lại cỡ chữ bình thường */
+    visibility: visible !important;
+    display: block !important;
+    color: #eeeeee !important;
+}
