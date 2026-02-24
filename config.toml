@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://dragonbrick.vercel.app/"
 languageCode = "en-us"
 title = "Dragonbrick"
 
@@ -10,7 +10,6 @@ title = "Dragonbrick"
 [params]
   homepage_features = true
   homepage_services = true
-  homepage_show_contact_mobile = true
   google_analytics_id=""
   favicon = "favicon.png"
 
