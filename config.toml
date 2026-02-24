@@ -1,6 +1,7 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "Dragonbrick"
+themesDir = "."
 theme = "."
 
 [module]
