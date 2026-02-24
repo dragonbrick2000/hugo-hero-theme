@@ -81,3 +81,42 @@ nav a:hover {
         flex-shrink: 0 !important; /* Giữ nguyên cỡ nút để trượt */
     }
 }
+/* --- THANH CUỘN MOBILE KIỂU LEGO TECHNIC --- */
+@media (max-width: 768px) {
+    nav {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        gap: 10px;
+        padding-bottom: 12px; /* Chừa chỗ cho thanh cuộn xịn */
+    }
+
+    /* 1. Thiết kế tổng thể thanh cuộn */
+    nav::-webkit-scrollbar {
+        height: 6px; /* Làm dày hơn một chút để dễ thấy */
+        display: block;
+    }
+
+    /* 2. Nền thanh cuộn (Đường ray) */
+    nav::-webkit-scrollbar-track {
+        background: #eeeeee; /* Màu xám siêu nhạt */
+        border-radius: 10px;
+        margin: 0 15px; /* Thụt vào hai đầu cho đẹp */
+    }
+
+    /* 3. Con trượt (Cái "Bánh răng" hoặc "Viên gạch" trượt) */
+    nav::-webkit-scrollbar-thumb {
+        background-color: #a9a9a9; /* Màu xám bạc Technic */
+        background-image: radial-gradient(#888888 2px, transparent 2px); /* Tạo các lỗ chấm như bánh răng */
+        background-size: 8px 8px; /* Khoảng cách các lỗ */
+        border: 1px solid #777777;
+        border-radius: 10px;
+        box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
+    }
+
+    /* Khi khách chạm tay vào trượt thì nó đậm lên */
+    nav::-webkit-scrollbar-thumb:active {
+        background-color: #555555;
+    }
+}
