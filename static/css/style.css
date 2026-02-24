@@ -1,63 +1,42 @@
-/* Tổng thể trang web */
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
+/* Sắp xếp Header (Logo bên trái, Menu bên phải) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Phần ảnh nền Hero */
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Fix lỗi logo bị to quá */
+header img {
+    height: 60px;
+    width: auto;
+}
+
+/* Dàn trang chủ cho đẹp */
 .dragon-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/Background.png");
+    position: relative;
+    height: 600px;
+    background: #000 url('/Background.png') no-repeat center center;
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Tạo hiệu ứng cuộn ảnh nền xịn */
-    height: 80vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     color: white;
-    text-align: center;
-    padding: 0 20px;
 }
 
-.dragon-hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-}
-
-/* Phần nội dung chữ */
-.content-section {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 60px 20px;
-    line-height: 1.8;
-    font-size: 1.2rem;
-    text-align: justify;
-}
-
-/* 3 Cột Features (Nếu bạn muốn hiện icon LEGO) */
-.features-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 40px;
-    background: #f9f9f9;
-}
-/* Tạo khoảng cách giữa các đoạn văn cho thoáng */
-p {
-    margin-bottom: 25px;
-}
-
-/* Hiệu ứng di chuột cho mấy cái nút menu */
-nav a:hover {
-    color: #ffcf00 !important; /* Màu vàng LEGO */
-    transition: 0.3s;
-}
-
-/* Đảm bảo trang web luôn dài ra ít nhất bằng màn hình */
-body {
-    min-height: 100vh;
-    background-color: #ffffff;
+/* Giãn cách phần chữ LEGO */
+.content-area {
+    padding: 80px 10%;
+    line-height: 2;
+    font-size: 1.1rem;
 }
