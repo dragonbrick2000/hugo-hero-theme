@@ -10,6 +10,7 @@ title = "Dragonbrick"
     min = "0.92.0"
     
 [params]
+  homepage_features = true
   google_analytics_id=""
   favicon = "favicon.png"
 
