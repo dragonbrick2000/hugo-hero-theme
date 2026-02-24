@@ -178,3 +178,54 @@ nav a:hover {
         border-radius: 10px;
     }
 }
+@media (max-width: 768px) {
+    nav {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        /* Tạo khoảng cách rộng rãi để ngón tay không bị chạm nhầm lên menu */
+        gap: 15px;
+        padding-bottom: 25px !important; 
+        margin-bottom: -10px;
+        scroll-behavior: smooth;
+        touch-action: pan-x;
+    }
+
+    /* LÀM CHO "BÁNH RĂNG" TO VÀ DỄ CHẠM HƠN */
+    nav::-webkit-scrollbar {
+        height: 12px !important; /* Tăng độ dày để vùng nhận diện rộng hơn */
+        display: block !important;
+    }
+
+    nav::-webkit-scrollbar-track {
+        background: #f8f8f8; /* Màu nền đường ray nhạt hơn cho thoáng */
+        border-radius: 10px;
+        margin: 0 10px;
+    }
+
+    nav::-webkit-scrollbar-thumb {
+        background-color: #b0b0b0;
+        /* Họa tiết bánh răng Technic rõ nét hơn */
+        background-image: radial-gradient(#666666 1.5px, transparent 1.5px);
+        background-size: 8px 8px;
+        border-radius: 10px;
+        /* Tạo khoảng đệm (border) dày để trông thanh cuộn vẫn mảnh mai nhưng vùng chạm thực tế rất to */
+        border: 3px solid #f8f8f8; 
+    }
+
+    /* Phản hồi cực nhạy khi chạm vào kéo */
+    nav::-webkit-scrollbar-thumb:active {
+        background-color: #d40000 !important;
+        background-image: radial-gradient(#ffffff 1.5px, transparent 1.5px);
+    }
+
+    nav a {
+        flex-shrink: 0 !important;
+        font-size: 13px !important;
+        padding: 8px 20px !important;
+        border-radius: 20px !important;
+        /* Đảm bảo chữ không bị đè lên vùng bánh răng */
+        margin-bottom: 5px; 
+    }
+}
