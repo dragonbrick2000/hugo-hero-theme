@@ -2,7 +2,7 @@
 title: "Dragonbrick - Ghép đam mê, xây giấc mơ"
 type: "home"
 layout: "index"
-heroHeading: "DRAGON BRICK"
+heroHeading: ""
 heroSubHeading: ""
 heroOverlay: true  # Đổi thành true để chữ hiện rõ trên ảnh
 heroBackground: "Background.png"
