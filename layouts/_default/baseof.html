@@ -3,15 +3,9 @@
 
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>{{ block "title" . }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+  <title>{{ .Title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {{ block "meta_tags" . }}{{end}}
-  <link rel="icon" href="{{ .Site.BaseURL }}favicon.png">
-
   <link rel="stylesheet" href="/css/style.css">
-  {{ block "header_css" . }}{{ end }}
-
 </head>
 
 <body class='page {{ block "body_classes" . }}{{ end }}'>
