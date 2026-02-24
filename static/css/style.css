@@ -9,28 +9,30 @@
 
     header nav {
         display: flex !important;
-        justify-content: flex-end !important; /* Đưa menu sát bên phải */
+        justify-content: flex-end !important;
         flex-grow: 1 !important;
     }
 
     header nav a {
-        margin-left: 20px !important; /* Khoảng cách giữa các nút */
+        margin-left: 20px !important;
         text-decoration: none !important;
         color: #333 !important;
         font-weight: bold !important;
         text-transform: uppercase !important;
-        padding: 8px 15px !important;
-        border: 2px solid transparent !important; /* Viền tàng hình để không bị giật khi hover */
-        transition: 0.3s !important;
+        padding: 10px 22px !important; /* Tăng padding xíu cho nút dài ra giống gạch 1x2 */
+        border: 2px solid transparent !important;
+        border-radius: 25px !important; /* Bo tròn sẵn để mượt mà */
+        transition: 0.3s all ease-in-out !important;
         font-size: 14px !important;
     }
 
-    /* Hiệu ứng khung đen khi di chuột vào */
+    /* HIỆU ỨNG HOVER BIẾN THÀNH GẠCH ĐEN BO TRÒN */
     header nav a:hover {
         background-color: #000 !important;
         color: #fff !important;
         border-color: #000 !important;
-        border-radius: 4px !important; /* Bo góc nhẹ kiểu Lego */
+        border-radius: 25px !important; /* ÉP BO TRÒN TUYỆT ĐỐI */
+        transform: translateY(-2px); /* Nhích nhẹ lên cho sinh động */
     }
 }
 
@@ -57,11 +59,12 @@
         display: inline-block !important;
         white-space: nowrap !important;
         margin-right: 10px !important;
-        padding: 6px 15px !important;
-        border: 1px solid #d40000 !important;
-        border-radius: 20px !important;
+        padding: 8px 18px !important;
+        border: 1.5px solid #d40000 !important;
+        border-radius: 25px !important; /* Mobile cũng bo tròn chuẩn gạch 1x2 */
         color: #d40000 !important;
         font-size: 12px !important;
         text-decoration: none !important;
+        font-weight: bold !important;
     }
 }
