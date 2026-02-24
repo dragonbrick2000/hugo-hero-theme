@@ -1,17 +1,14 @@
 ---
-type: "homepage"
-layout: "home"
-title: 'Dragonbrick - Ghép đam mê, xây giấc mơ'
-date: 2018-02-12T15:37:57+07:00
-heroHeading: ''
-heroSubHeading: ''
-heroBackground: 'Background.png'
-heroOverlay: false
+title: "Dragonbrick - Ghép đam mê, xây giấc mơ"
+type: "home"
+layout: "index"
+heroHeading: "DRAGON BRICK"
+heroSubHeading: "Ghép đam mê, xây giấc mơ cùng LEGO"
+heroOverlay: true  # Đổi thành true để chữ hiện rõ trên ảnh
 ---
 
-## Chào mừng đến với Dragon Brick
+## Chào mừng bạn đến với Thế giới LEGO của chúng tôi!
 
-Chúng tôi tự hào là đơn vị cung cấp LEGO chính hãng uy tín nhất.
-Dragon Brick - Đồ chơi cao cấp - Chất lượng tốt nhất "earth 616"
+Đây là nơi bạn tìm thấy những bộ LEGO tuyệt vời nhất...
 
 
