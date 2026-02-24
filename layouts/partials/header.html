@@ -1,36 +1,36 @@
 <style>
-/* ÉP CHẾ ĐỘ TRƯỜNG NGANG - KHÔNG CHO NHẢY DÒNG */
-#main-menu.main-menu {
+/* ÉP TRƯỢT NGANG - DÙNG CLASS MỚI */
+.main-nav-dragon {
     display: block !important;
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch !important;
     scrollbar-width: none !important;
+    flex-grow: 1 !important;
 }
-#main-menu.main-menu::-webkit-scrollbar { display: none !important; }
+.main-nav-dragon::-webkit-scrollbar { display: none !important; }
 
-#main-menu.main-menu ul {
+.main-nav-dragon ul {
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: nowrap !important; /* Cấm nhảy dòng tuyệt đối */
-    width: max-content !important; /* Ép chiều dài theo tổng các nút */
+    flex-wrap: nowrap !important;
+    width: max-content !important;
     margin: 0 !important;
     padding: 10px 0 !important;
     list-style: none !important;
 }
 
-#main-menu.main-menu a {
+.main-nav-dragon a {
     display: block !important;
     white-space: nowrap !important;
     color: #d40000 !important;
     font-weight: bold !important;
     text-decoration: none !important;
     padding: 8px 20px !important;
-    border: 2px solid transparent !important;
+    border: 1px solid #eee !important;
     border-radius: 25px !important;
     font-size: 13px !important;
 }
 
-/* HIỆU ỨNG VẪY CHÀO */
 @media (max-width: 768px) {
     .nav-hint {
         animation: hintSlide 2s ease-in-out !important;
@@ -39,12 +39,13 @@
 }
 @keyframes hintSlide {
     0%, 100% { transform: translateX(0); }
-    20% { transform: translateX(-70px); }
+    20% { transform: translateX(-60px); }
     50% { transform: translateX(15px); }
 }
 </style>
+
 <div class='header header-absolute'>
-  <div class="container">
+  <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap;">
     <div class="logo">
       <a href="{{ .Site.BaseURL }}"><img height={{ .Site.Params.logo.desktop_height }} width={{ .Site.Params.logo.desktop_width }} alt="{{ .Site.Params.logo.alt }}" src="{{ .Site.Params.logo.desktop | relURL }}" /></a>
     </div>
@@ -52,6 +53,6 @@
       <a href="{{ .Site.BaseURL }}"><img height={{ .Site.Params.logo.mobile_height }} width={{ .Site.Params.logo.mobile_width }} alt="{{ .Site.Params.logo.alt }}" src="{{ .Site.Params.logo.mobile | relURL }}" /></a>
     </div>
     {{ partial "main-menu.html" . }}
-    {{ partial "hamburger.html" . }}
+    <div style="display:none">{{ partial "hamburger.html" . }}</div>
   </div>
 </div>
