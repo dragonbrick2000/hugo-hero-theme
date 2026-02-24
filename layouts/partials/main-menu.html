@@ -1,13 +1,13 @@
-<div id="main-menu" class="main-menu nav-hint">
-  <ul>
-    {{ $currentPage := . }}
-    {{ range .Site.Menus.main }}
-    <li class="menu-item-{{ .Name | lower }}{{ if or ($currentPage.IsMenuCurrent "main" .) (eq $currentPage.RelPermalink .URL) }} active{{ end }}">
-      <a href="{{.URL}}">
-        {{ .Pre }}
-        <span>{{ .Name }}</span>
-      </a>
-    </li>
-    {{end}}
-  </ul>
+<div id="main-menu" class="main-menu nav-hint" style="overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; display: block !important;">
+    <ul>
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+        <li class="menu-item-{{ .Name | lower }}{{ if or ($currentPage.IsMenuCurrent "main" .) (eq $currentPage.Section .Identifier) }} active{{ end }}">
+            <a href="{{ .URL | relURL }}">
+                {{ .Pre }}
+                <span>{{ .Name }}</span>
+            </a>
+        </li>
+        {{ end }}
+    </ul>
 </div>

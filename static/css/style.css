@@ -1,70 +1,57 @@
-/* --- PHẦN CHUNG --- */
-body { margin: 0; font-family: sans-serif; background: #fff; overflow-x: hidden; }
-
+/* 1. Reset chuẩn cho Header */
 header {
-    display: flex !important; 
-    justify-content: space-between !important; 
+    display: flex !important;
+    justify-content: space-between !important;
     align-items: center !important;
     padding: 10px 5% !important;
-    background: #fff !important;
-    position: sticky; top: 0; z-index: 1000;
-}
-header img { height: 50px; width: auto; }
-
-/* --- MENU GẠCH LEGO 1x2 (DÙNG CHO CẢ DESKTOP & MOBILE) --- */
-.main-menu ul { 
-    display: flex !important; 
-    list-style: none !important; 
-    margin: 0 !important; 
-    padding: 0 !important; 
+    flex-wrap: nowrap !important; /* Tuyệt đối không cho Logo và Menu xuống hàng */
 }
 
-.main-menu a {
-    text-decoration: none !important; font-weight: bold !important; 
-    text-transform: uppercase !important; font-size: 14px;
-    padding: 10px 22px !important; border-radius: 25px !important; 
-    color: #d40000 !important; border: 2px solid transparent !important; 
-    transition: 0.3s; display: block !important;
-    white-space: nowrap !important; /* Cấm chữ trong nút bị xuống dòng */
+/* 2. Ép Menu phải xếp hàng ngang và Trượt */
+#main-menu.main-menu {
+    flex-grow: 1 !important;
+    width: 100% !important;
 }
-.main-menu a:hover { border: 2px solid #000 !important; }
 
-/* --- ĐẶC TRỊ MOBILE (ÉP TRƯỢT NGANG) --- */
+#main-menu.main-menu ul {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* Cấm nhảy dòng */
+    overflow-x: visible !important;
+    margin: 0 !important;
+    padding: 10px 0 !important;
+    list-style: none !important;
+    width: max-content !important; /* Ép chiều dài theo tổng các nút */
+}
+
+/* 3. Style Nút Gạch LEGO 1x2 */
+#main-menu.main-menu a {
+    display: block !important;
+    white-space: nowrap !important; /* Cấm chữ trong nút nhảy dòng */
+    color: #d40000 !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    padding: 8px 20px !important;
+    border: 2px solid transparent !important;
+    border-radius: 25px !important;
+    font-size: 13px !important;
+    transition: 0.3s !important;
+}
+
+#main-menu.main-menu a:hover {
+    border: 2px solid #000 !important;
+}
+
+/* 4. Hiệu ứng Vẫy Chào (Chỉ chạy trên Mobile) */
 @media (max-width: 768px) {
-    header { height: 65px !important; gap: 10px !important; }
-    header img { height: 35px !important; }
+    .nav-hint {
+        animation: hintSlide 2s ease-in-out !important;
+        animation-delay: 1.2s !important;
+    }
+}
 
-    /* 1. ÉP KHUNG CHỨA (DIV) BIẾN THÀNH ĐƯỜNG RAY */
-    #main-menu.main-menu {
-        display: block !important;
-        width: auto !important;
-        overflow-x: auto !important; 
-        -webkit-overflow-scrolling: touch !important;
-        scrollbar-width: none !important;
-        flex-grow: 1 !important;
-    }
-    #main-menu.main-menu::-webkit-scrollbar { display: none !important; }
-    
-    /* 2. ÉP DANH SÁCH (UL) PHẢI NẰM TRÊN MỘT HÀNG DUY NHẤT */
-    #main-menu.main-menu ul { 
-        display: flex !important; 
-        flex-direction: row !important; /* Buộc nằm ngang */
-        flex-wrap: nowrap !important;  /* Cấm nhảy dòng tuyệt đối */
-        gap: 12px !important; 
-        width: max-content !important; /* Ép chiều rộng theo nội dung nút */
-        padding: 5px 0 !important;
-    }
-
-    /* 3. HIỆU ỨNG VẪY CHÀO (NAV-HINT) */
-    .nav-hint { 
-        animation: hintSlide 2s ease-in-out !important; 
-        animation-delay: 1s !important;
-    }
-    @keyframes hintSlide {
-        0%, 100% { transform: translateX(0); }
-        20% { transform: translateX(-60px); }
-        50% { transform: translateX(15px); }
-        80% { transform: translateX(-10px); }
-    }
-
-    .main-menu a { font-size: 12
+@keyframes hintSlide {
+    0%, 100% { transform: translateX(0); }
+    30% { transform: translateX(-80px); } /* Rung mạnh hẳn lên cho khách thấy */
+    60% { transform: translateX(20px); }
+}
