@@ -136,3 +136,45 @@ nav a:hover {
         background-color: #d40000 !important;
     }
 }
+@media (max-width: 768px) {
+    nav {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        
+        /* 1. KHỬ RÍCH: Tạo đà trượt khi buông tay */
+        -webkit-overflow-scrolling: touch !important; 
+        scroll-behavior: smooth;
+        
+        /* 2. HIỆU ỨNG HÍT: Giúp các nút tự dừng lại ở vị trí đẹp */
+        scroll-snap-type: x mandatory; 
+        
+        touch-action: pan-x;
+        gap: 12px;
+        padding-bottom: 20px !important;
+    }
+
+    nav a {
+        flex-shrink: 0 !important;
+        /* Giúp nút "hít" vào lề khi dừng lại */
+        scroll-snap-align: start; 
+        
+        font-size: 12px !important;
+        padding: 8px 18px !important;
+        border-radius: 20px !important;
+        white-space: nowrap !important;
+    }
+
+    /* 3. LÀM MƯỢT THANH CUỘN */
+    nav::-webkit-scrollbar {
+        height: 8px !important;
+    }
+
+    nav::-webkit-scrollbar-thumb {
+        background-color: #a9a9a9;
+        /* Giảm bớt độ phức tạp của gradient để trượt nhẹ máy hơn */
+        background-image: radial-gradient(#777777 1px, transparent 1px);
+        background-size: 5px 5px;
+        border-radius: 10px;
+    }
+}
