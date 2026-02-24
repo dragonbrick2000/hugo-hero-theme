@@ -19,49 +19,55 @@
         color: #333 !important;
         font-weight: bold !important;
         text-transform: uppercase !important;
-        padding: 10px 22px !important; /* Tăng padding xíu cho nút dài ra giống gạch 1x2 */
+        padding: 10px 22px !important;
         border: 2px solid transparent !important;
-        border-radius: 25px !important; /* Bo tròn sẵn để mượt mà */
+        border-radius: 25px !important;
         transition: 0.3s all ease-in-out !important;
         font-size: 14px !important;
     }
 
-    /* HIỆU ỨNG HOVER BIẾN THÀNH GẠCH ĐEN BO TRÒN */
     header nav a:hover {
         background-color: #000 !important;
         color: #fff !important;
         border-color: #000 !important;
-        border-radius: 25px !important; /* ÉP BO TRÒN TUYỆT ĐỐI */
-        transform: translateY(-2px); /* Nhích nhẹ lên cho sinh động */
+        transform: translateY(-2px);
     }
 }
 
-/* --- 2. CHẾ ĐỘ ĐIỆN THOẠI (MOBILE) --- */
+/* --- 2. CHẾ ĐỘ ĐIỆN THOẠI (MOBILE) - FIX LỖI TRƯỢT --- */
 @media (max-width: 768px) {
     header[style] {
         display: flex !important;
-        flex-wrap: nowrap !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important; /* Ép logo và menu chung 1 hàng */
         align-items: center !important;
         padding: 10px 15px !important;
+        justify-content: flex-start !important;
     }
 
+    /* Thẻ nav đóng vai trò là khung cửa sổ trượt */
     header nav {
-        display: block !important;
+        display: block !important; /* Phải là block để overflow-x chạy chuẩn */
         overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        scrollbar-width: none !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important; /* Vuốt mượt trên iPhone */
+        scrollbar-width: none !important; /* Ẩn thanh cuộn trên Firefox */
+        flex-grow: 1 !important;
         margin-left: 10px !important;
+        white-space: nowrap !important; /* Ép các phần tử con không xuống dòng */
     }
 
-    header nav::-webkit-scrollbar { display: none !important; }
+    header nav::-webkit-scrollbar { 
+        display: none !important; /* Ẩn thanh cuộn trên Chrome/Safari */
+    }
 
     header nav a {
-        display: inline-block !important;
+        display: inline-block !important; /* Để chúng xếp hàng ngang trong nav block */
         white-space: nowrap !important;
-        margin-right: 10px !important;
+        margin-right: 12px !important;
         padding: 8px 18px !important;
         border: 1.5px solid #d40000 !important;
-        border-radius: 25px !important; /* Mobile cũng bo tròn chuẩn gạch 1x2 */
+        border-radius: 25px !important;
         color: #d40000 !important;
         font-size: 12px !important;
         text-decoration: none !important;
