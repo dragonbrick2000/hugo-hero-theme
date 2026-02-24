@@ -170,3 +170,53 @@ nav a:hover {
         background-size: cover;
     }
 }
+/* --- HIỆU ỨNG TRƯỢT NGANG CHO MOBILE --- */
+@media (max-width: 768px) {
+    header {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 10px 15px !important;
+        overflow: hidden; /* Không cho cả header bị trượt */
+    }
+
+    header img {
+        height: 35px !important;
+        flex-shrink: 0; /* Logo không được bị co lại */
+        margin-right: 15px;
+    }
+
+    nav {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto; /* Kích hoạt thanh trượt ngang */
+        white-space: nowrap; /* Buộc các nút phải nằm trên 1 hàng duy nhất */
+        -webkit-overflow-scrolling: touch; /* Giúp vuốt trên iPhone mượt hơn */
+        padding-bottom: 5px; /* Tránh bị che mất khung đen khi trượt */
+        gap: 10px;
+    }
+
+    /* Ẩn thanh cuộn xấu xí để nhìn cho mượt */
+    nav::-webkit-scrollbar {
+        display: none;
+    }
+    nav {
+        -ms-overflow-style: none;  /* Cho IE và Edge */
+        scrollbar-width: none;  /* Cho Firefox */
+    }
+
+    nav a {
+        font-size: 13px !important; /* Chữ to rõ ràng, không cần để 9px nữa */
+        padding: 6px 12px !important;
+        flex-shrink: 0; /* Đảm bảo nút không bị bóp méo */
+        color: #d40000 !important;
+        border: 2px solid transparent;
+        transition: 0.3s;
+    }
+    
+    /* Vẫn giữ hiệu ứng khung đen khi chạm (hover) */
+    nav a:active, nav a:hover {
+        border: 2px solid #000000 !important;
+    }
+}
