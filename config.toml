@@ -2,7 +2,7 @@ baseURL = "https://dragonbrick.vercel.app/"
 dataDir = "data"
 languageCode = "en-us"
 title = "Dragonbrick"
-
+theme = "hugo-hero-theme"
 
 [module]
   [module.hugoVersion]
