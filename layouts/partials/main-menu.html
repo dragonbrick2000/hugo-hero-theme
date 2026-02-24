@@ -1,12 +1,54 @@
+<style>
+  /* ÉP LOGO VÀ MENU NẰM CHUNG 1 HÀNG */
+  .container { display: flex !important; flex-direction: row !important; align-items: center !important; flex-wrap: nowrap !important; }
+  .logo, .logo-mobile { flex-shrink: 0 !important; }
+
+  /* ÉP MENU TRƯỢT NGANG */
+  .main-nav-dragon {
+    display: block !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    flex-grow: 1 !important;
+    margin-left: 15px !important;
+    scrollbar-width: none !important;
+  }
+  .main-nav-dragon::-webkit-scrollbar { display: none !important; }
+
+  .main-nav-dragon ul {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    width: max-content !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .main-nav-dragon a {
+    display: block !important;
+    white-space: nowrap !important;
+    padding: 8px 15px !important;
+    background: #f8f8f8 !important; /* Tạo màu nền cho dễ thấy nút */
+    border-radius: 20px !important;
+    margin-right: 8px !important;
+    font-size: 12px !important;
+    color: #d40000 !important;
+    border: 1px solid #ddd !important;
+  }
+
+  /* HIỆU ỨNG RUNG CHÀO KHÁCH */
+  .nav-hint { animation: dragonShake 2s ease-in-out !important; animation-delay: 1s; }
+  @keyframes dragonShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-50px); }
+    50% { transform: translateX(10px); }
+  }
+</style>
+
 <nav class="main-nav-dragon nav-hint">
     <ul>
-        {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
-        <li>
-            <a href="{{ .URL | relURL }}">
-                <span>{{ .Name }}</span>
-            </a>
-        </li>
+        <li><a href="{{ .URL | relURL }}"><span>{{ .Name }}</span></a></li>
         {{ end }}
     </ul>
 </nav>
