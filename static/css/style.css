@@ -112,3 +112,20 @@
         pointer-events: none;
     }
 }
+/* ĐIỀU CHỈNH BACKGROUND CHO MOBILE */
+@media (max-width: 768px) {
+    /* Tìm cái thẻ div chứa background nãy ở dòng 29 */
+    div[style*="Background.png"] {
+        height: 300px !important; /* Giảm chiều cao trên mobile để không bị choán hết màn hình */
+        background-attachment: scroll !important; /* Quan trọng: giúp hình không bị giật trên iPhone */
+        background-size: cover !important; /* Ép hình phủ kín khung */
+        background-position: center center !important; /* Luôn lấy tâm hình làm chuẩn */
+    }
+
+    /* Nếu có chữ h1 trong đó, cho nó nhỏ lại xíu cho cân đối */
+    div[style*="Background.png"] h1 {
+        font-size: 2rem !important; 
+        padding: 0 20px !important;
+        text-align: center !important;
+    }
+}
