@@ -247,7 +247,7 @@ footer p, .footer p {
 }
 /* 2. TỰ TẠO DÒNG COPYRIGHT MỚI SẠCH SẼ */
 footer p::before, .footer p::before {
-    content: "© 2026 Dragon Brick" !important; /* Chỉ giữ lại nội dung này */
+    content: "Email: dragonbrick2000@gmail.com""Phone:(+84)89-899-2595" !important; /* Chỉ giữ lại nội dung này */
     font-size: 14px !important; /* Cho hiện lại cỡ chữ bình thường */
     visibility: visible !important;
     display: block !important;
