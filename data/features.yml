@@ -1,12 +1,12 @@
 items:
-- title: "LEGO Chính Hãng"
-  image: "Background.png" # Bạn có thể đổi đường dẫn ảnh sau
-  description: "Chúng tôi cam kết cung cấp các bộ LEGO chính hãng 100% từ các dòng phổ biến đến hàng hiếm 'Collector'."
+  - title: "LEGO Chính Hãng"
+    image: "features/noun_3d modeling_1885342.svg"
+    description: "Chúng tôi cam kết cung cấp các bộ LEGO chính hãng 100% từ các dòng phổ biến đến hàng hiếm Collector."
 
-- title: "Order Theo Yêu Cầu"
-  image: "Background.png"
-  description: "Tìm kiếm và đặt hàng những bộ LEGO khó tìm nhất thế giới. Dragon Brick sẽ mang đam mê về tận tay bạn."
+  - title: "Order Theo Yêu Cầu"
+    image: "features/noun_The Process_1885341.svg"
+    description: "Tìm kiếm và đặt hàng những bộ LEGO khó tìm nhất thế giới. Dragon Brick sẽ mang đam mê về tận tay bạn."
 
-- title: "Chất Lượng Earth-616"
-  image: "Background.png"
-  description: "Chất lượng dịch vụ và sản phẩm tốt nhất hệ mặt trời. Sự hài lòng của khách hàng là viên gạch xây nên chúng tôi."
+  - title: "Chất Lượng Earth-616"
+    image: "features/noun_visual effect_1885325.svg"
+    description: "Chất lượng dịch vụ và sản phẩm tốt nhất hệ mặt trời. Sự hài lòng của khách hàng là viên gạch xây nên chúng tôi."
