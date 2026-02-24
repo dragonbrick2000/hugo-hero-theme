@@ -1,61 +1,70 @@
-/* --- 1. CÀI ĐẶT CHUNG --- */
+/* --- PHẦN CHUNG --- */
 body { margin: 0; font-family: sans-serif; background: #fff; overflow-x: hidden; }
 
-/* --- 2. GIAO DIỆN MÁY TÍNH (DESKTOP) --- */
 header {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 15px 5%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: flex !important; 
+    justify-content: space-between !important; 
+    align-items: center !important;
+    padding: 10px 5% !important;
+    background: #fff !important;
     position: sticky; top: 0; z-index: 1000;
 }
 header img { height: 50px; width: auto; }
 
-/* Cấu trúc Menu Gạch LEGO */
-.main-menu ul { display: flex; gap: 15px; list-style: none; margin: 0; padding: 0; align-items: center; }
-.main-menu a {
-    text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 14px;
-    padding: 10px 22px; border-radius: 25px; /* Dáng gạch 1x2 */
-    color: #d40000 !important; border: 2px solid transparent; 
-    transition: 0.3s; display: block;
+/* --- MENU GẠCH LEGO 1x2 (DÙNG CHO CẢ DESKTOP & MOBILE) --- */
+.main-menu ul { 
+    display: flex !important; 
+    list-style: none !important; 
+    margin: 0 !important; 
+    padding: 0 !important; 
 }
-.main-menu a:hover { border: 2px solid #000; background: rgba(0,0,0,0.02); }
 
-/* --- 3. GIAO DIỆN DI ĐỘNG (MOBILE) --- */
+.main-menu a {
+    text-decoration: none !important; font-weight: bold !important; 
+    text-transform: uppercase !important; font-size: 14px;
+    padding: 10px 22px !important; border-radius: 25px !important; 
+    color: #d40000 !important; border: 2px solid transparent !important; 
+    transition: 0.3s; display: block !important;
+    white-space: nowrap !important; /* Cấm chữ trong nút bị xuống dòng */
+}
+.main-menu a:hover { border: 2px solid #000 !important; }
+
+/* --- ĐẶC TRỊ MOBILE (ÉP TRƯỢT NGANG) --- */
 @media (max-width: 768px) {
-    header { padding: 10px 15px !important; gap: 10px; height: 65px; }
-    header img { height: 35px !important; flex-shrink: 0; }
+    header { height: 65px !important; gap: 10px !important; }
+    header img { height: 35px !important; }
 
-    /* Buộc menu phải nằm trên 1 hàng và trượt được */
+    /* 1. ÉP KHUNG CHỨA (DIV) BIẾN THÀNH ĐƯỜNG RAY */
     #main-menu.main-menu {
         display: block !important;
+        width: auto !important;
         overflow-x: auto !important; 
         -webkit-overflow-scrolling: touch !important;
-        scrollbar-width: none; /* Ẩn thanh cuộn */
-        flex-grow: 1;
+        scrollbar-width: none !important;
+        flex-grow: 1 !important;
     }
-    #main-menu.main-menu::-webkit-scrollbar { display: none; }
+    #main-menu.main-menu::-webkit-scrollbar { display: none !important; }
     
-    /* Ép danh sách không được xuống dòng */
-    .main-menu ul { 
+    /* 2. ÉP DANH SÁCH (UL) PHẢI NẰM TRÊN MỘT HÀNG DUY NHẤT */
+    #main-menu.main-menu ul { 
         display: flex !important; 
-        flex-wrap: nowrap !important; 
-        gap: 10px; 
-        padding: 5px 0; 
+        flex-direction: row !important; /* Buộc nằm ngang */
+        flex-wrap: nowrap !important;  /* Cấm nhảy dòng tuyệt đối */
+        gap: 12px !important; 
+        width: max-content !important; /* Ép chiều rộng theo nội dung nút */
+        padding: 5px 0 !important;
     }
 
-    /* HIỆU ỨNG VẪY CHÀO (NAV-HINT) */
-    .nav-hint { animation: hintSlide 1.8s ease-in-out !important; }
+    /* 3. HIỆU ỨNG VẪY CHÀO (NAV-HINT) */
+    .nav-hint { 
+        animation: hintSlide 2s ease-in-out !important; 
+        animation-delay: 1s !important;
+    }
     @keyframes hintSlide {
         0%, 100% { transform: translateX(0); }
-        20% { transform: translateX(-50px); }
-        50% { transform: translateX(10px); }
-        80% { transform: translateX(-5px); }
+        20% { transform: translateX(-60px); }
+        50% { transform: translateX(15px); }
+        80% { transform: translateX(-10px); }
     }
 
-    /* Giữ dáng gạch LEGO 1x2 trên Mobile */
-    .main-menu a {
-        font-size: 12px !important; 
-        padding: 8px 18px !important;
-        border-radius: 20px !important; 
-        white-space: nowrap !important; /* Cấm chữ xuống dòng */
-    }
-}
+    .main-menu a { font-size: 12
