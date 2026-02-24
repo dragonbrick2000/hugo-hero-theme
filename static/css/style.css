@@ -229,3 +229,48 @@ nav a:hover {
         margin-bottom: 5px; 
     }
 }
+@media (max-width: 768px) {
+    header {
+        display: flex !important;
+        flex-direction: row !important;
+        /* Căn giữa tất cả các thành phần theo trục dọc */
+        align-items: center !important; 
+        padding: 10px 15px !important;
+        height: 60px; /* Cố định chiều cao header để dễ căn chỉnh */
+    }
+
+    header img {
+        height: 35px !important;
+        flex-shrink: 0 !important;
+    }
+
+    nav {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        gap: 12px;
+        
+        /* CĂN CHỈNH QUAN TRỌNG TẠI ĐÂY */
+        align-items: center !important; /* Căn nút menu vào giữa */
+        margin-top: 5px; /* Nhích nhẹ xuống để bằng vai với logo */
+        padding-bottom: 15px !important; /* Thu hẹp lại một chút để không đẩy menu lên cao */
+        
+        flex-grow: 1; /* Cho phép menu chiếm không gian còn lại */
+    }
+
+    /* Giữ nguyên cái bánh răng Technic bên dưới */
+    nav::-webkit-scrollbar {
+        height: 8px !important;
+    }
+
+    nav a {
+        flex-shrink: 0 !important;
+        font-size: 12px !important;
+        padding: 6px 16px !important; /* Thu gọn padding để nhìn thanh thoát hơn */
+        border-radius: 20px !important;
+        /* Đảm bảo chữ đứng thẳng hàng */
+        display: flex;
+        align-items: center;
+    }
+}
