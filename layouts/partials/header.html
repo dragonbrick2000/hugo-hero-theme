@@ -1,70 +1,9 @@
-<style>
-/* ÉP TRƯỢT NGANG - DÙNG CLASS MỚI */
-.main-nav-dragon {
-    display: block !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    scrollbar-width: none !important;
-    flex-grow: 1 !important;
-}
-.main-nav-dragon::-webkit-scrollbar { display: none !important; }
-
-.main-nav-dragon ul {
-    <header style="display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-    <img src="/dragon.jpg" style="height: 60px; width: auto;" alt="Logo">
-    
-    <nav class="nav-dragon-brick" style="display: block !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; flex-grow: 1; margin-left: 20px; scrollbar-width: none;">
-        <div style="display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; width: max-content !important; gap: 15px; padding: 5px 0;">
-            <a href="/dich-vu-order/" style="text-decoration: none; color: #d40000; font-weight: bold; text-transform: uppercase; white-space: nowrap; padding: 10px 20px; border: 1px solid #eee; border-radius: 25px; background: #f9f9f9; font-size: 13px;">Dịch vụ order</a>
-            <a href="/cua-hang/" style="text-decoration: none; color: #d40000; font-weight: bold; text-transform: uppercase; white-space: nowrap; padding: 10px 20px; border: 1px solid #eee; border-radius: 25px; background: #f9f9f9; font-size: 13px;">Cửa hàng</a>
-            <a href="/danh-muc/" style="text-decoration: none; color: #d40000; font-weight: bold; text-transform: uppercase; white-space: nowrap; padding: 10px 20px; border: 1px solid #eee; border-radius: 25px; background: #f9f9f9; font-size: 13px;">Danh mục</a>
-            <a href="/ve-dragon-brick/" style="text-decoration: none; color: #d40000; font-weight: bold; text-transform: uppercase; white-space: nowrap; padding: 10px 20px; border: 1px solid #eee; border-radius: 25px; background: #f9f9f9; font-size: 13px;">Về Dragon Brick</a>
-            <a href="/lien-he/" style="text-decoration: none; color: #d40000; font-weight: bold; text-transform: uppercase; white-space: nowrap; padding: 10px 20px; border: 1px solid #eee; border-radius: 25px; background: #f9f9f9; font-size: 13px;">Liên hệ</a>
-        </div>
-    </nav>
-</header>
-
-<style>
-    /* Ẩn thanh cuộn */
-    .nav-dragon-brick::-webkit-scrollbar { display: none !important; }
-    /* Hiệu ứng rung báo hiệu trượt được trên mobile */
-    @media (max-width: 768px) {
-        .nav-dragon-brick { animation: slideHint 2s ease-in-out; animation-delay: 1.5s; }
-    }
-    @keyframes slideHint {
-        0%, 100% { transform: translateX(0); }
-        30% { transform: translateX(-50px); }
-        60% { transform: translateX(15px); }
-    }
-</style>
-    padding: 8px 20px !important;
-    border: 1px solid #eee !important;
-    border-radius: 25px !important;
-    font-size: 13px !important;
-}
-
-@media (max-width: 768px) {
-    .nav-hint {
-        animation: hintSlide 2s ease-in-out !important;
-        animation-delay: 1s !important;
-    }
-}
-@keyframes hintSlide {
-    0%, 100% { transform: translateX(0); }
-    20% { transform: translateX(-60px); }
-    50% { transform: translateX(15px); }
-}
-</style>
-
-<div class='header header-absolute'>
-  <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap;">
-    <div class="logo">
-      <a href="{{ .Site.BaseURL }}"><img height={{ .Site.Params.logo.desktop_height }} width={{ .Site.Params.logo.desktop_width }} alt="{{ .Site.Params.logo.alt }}" src="{{ .Site.Params.logo.desktop | relURL }}" /></a>
+<header style="display: flex !important; justify-content: space-between !important; align-items: center !important; padding: 10px 5% !important; background: #fff !important; flex-wrap: nowrap !important; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+    <div class="logo" style="flex-shrink: 0 !important;">
+        <a href="/"><img src="/dragon.jpg" style="height: 50px; width: auto;" alt="Logo"></a>
     </div>
-    <div class="logo-mobile">
-      <a href="{{ .Site.BaseURL }}"><img height={{ .Site.Params.logo.mobile_height }} width={{ .Site.Params.logo.mobile_width }} alt="{{ .Site.Params.logo.alt }}" src="{{ .Site.Params.logo.mobile | relURL }}" /></a>
-    </div>
+
     {{ partial "main-menu.html" . }}
+    
     <div style="display:none">{{ partial "hamburger.html" . }}</div>
-  </div>
-</div>
+</header>
