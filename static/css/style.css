@@ -1,33 +1,33 @@
-/* 1. Reset chuẩn cho Header */
-header {
+/* RESET CHO CHẮC CHẮN */
+.main-nav-dragon, .main-nav-dragon ul {
+    all: unset;
     display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    padding: 10px 5% !important;
-    flex-wrap: nowrap !important; /* Tuyệt đối không cho Logo và Menu xuống hàng */
 }
 
-/* 2. Ép Menu phải xếp hàng ngang và Trượt */
-#main-menu.main-menu {
-    flex-grow: 1 !important;
+/* KHUNG CHỨA TRƯỢT NGANG */
+.main-nav-dragon {
+    display: flex !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
     width: 100% !important;
+    scrollbar-width: none;
 }
+.main-nav-dragon::-webkit-scrollbar { display: none; }
 
-#main-menu.main-menu ul {
+/* DANH SÁCH NÚT HÀNG NGANG */
+.main-nav-dragon ul {
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: nowrap !important; /* Cấm nhảy dòng */
-    overflow-x: visible !important;
-    margin: 0 !important;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;
     padding: 10px 0 !important;
     list-style: none !important;
-    width: max-content !important; /* Ép chiều dài theo tổng các nút */
 }
 
-/* 3. Style Nút Gạch LEGO 1x2 */
-#main-menu.main-menu a {
+/* STYLE NÚT GẠCH LEGO 1x2 */
+.main-nav-dragon a {
     display: block !important;
-    white-space: nowrap !important; /* Cấm chữ trong nút nhảy dòng */
+    white-space: nowrap !important;
     color: #d40000 !important;
     font-weight: bold !important;
     text-decoration: none !important;
@@ -35,23 +35,15 @@ header {
     border: 2px solid transparent !important;
     border-radius: 25px !important;
     font-size: 13px !important;
-    transition: 0.3s !important;
+    transition: 0.3s;
+    border: 1px solid #eee; /* Thêm viền nhẹ cho giống gạch */
 }
+.main-nav-dragon a:hover { border: 2px solid #000 !important; }
 
-#main-menu.main-menu a:hover {
-    border: 2px solid #000 !important;
-}
-
-/* 4. Hiệu ứng Vẫy Chào (Chỉ chạy trên Mobile) */
-@media (max-width: 768px) {
-    .nav-hint {
-        animation: hintSlide 2s ease-in-out !important;
-        animation-delay: 1.2s !important;
-    }
-}
-
-@keyframes hintSlide {
+/* HIỆU ỨNG VẪY CHÀO */
+.nav-hint { animation: dragonSlide 1.5s ease-in-out !important; animation-delay: 1s; }
+@keyframes dragonSlide {
     0%, 100% { transform: translateX(0); }
-    30% { transform: translateX(-80px); } /* Rung mạnh hẳn lên cho khách thấy */
-    60% { transform: translateX(20px); }
+    30% { transform: translateX(-40px); }
+    60% { transform: translateX(10px); }
 }
