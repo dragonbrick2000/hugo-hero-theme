@@ -231,34 +231,42 @@ footer::after {
     margin-top: 30px;
     opacity: 0.3;
 }
-/* 1. GIỮ CHO FOOTER HIỂN THỊ BÌNH THƯỜNG */
+/* 1. RESET FOOTER VỀ TRẠNG THÁI HIỆN RÕ */
 footer p, .footer p {
     font-size: 14px !important;
     visibility: visible !important;
-    color: #ffffff !important;
+    color: transparent !important; /* Làm ẩn slogan gốc bằng cách cho màu trong suốt */
+    position: relative !important;
+    height: auto !important;
+    margin-bottom: 20px !important;
 }
 
-/* 2. DÙNG CHIÊU "CHÈN ĐÈ" ĐỂ CHE DÒNG CHỮ THỪA */
-/* Chúng ta sẽ dùng chính cái nền đen để che đi phần slogan */
-footer p, .footer p {
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    /* Giới hạn chiều rộng để chỉ hiện đủ dòng đầu */
-    max-width: 200px; 
-    white-space: nowrap;
-    text-overflow: ellipsis; /* Nếu dài quá nó sẽ hiện dấu ... thay vì hiện slogan */
-}
-
-/* 3. PHỤC HỒI LIÊN HỆ - ÉP NÓ XUỐNG DÒNG VÀ HIỆN RÕ */
-footer a, .footer a {
-    display: inline-block !important;
+/* 2. CHÈN LẠI DÒNG COPYRIGHT MỚI SẠCH SẼ */
+footer p::before, .footer p::before {
+    content: "© 2026 Dragon Brick" !important;
+    color: #ffffff !important; /* Hiện màu trắng lên trên nền trong suốt */
     visibility: visible !important;
+    display: block !important;
+    margin-bottom: 15px !important;
+}
+
+/* 3. ĐƯA EMAIL VÀ PHONE VỀ ĐÚNG VỊ TRÍ (CÁC VIÊN GẠCH) */
+footer a, .footer a {
+    visibility: visible !important;
+    color: #ffffff !important;
     font-size: 13px !important;
-    background: #222 !important;
-    color: #fff !important;
+    background: #222 !important; /* Tạo màu nền cho viên gạch */
     padding: 8px 18px !important;
     border-radius: 25px !important;
-    margin: 10px 5px !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    margin: 5px 10px !important;
     border: 1px solid #333 !important;
+    position: relative !important; /* Đảm bảo nó nằm trên lớp trong suốt */
+}
+
+/* Hiệu ứng khi hover vào viên gạch */
+footer a:hover {
+    background: #d40000 !important;
+    border-color: #d40000 !important;
 }
