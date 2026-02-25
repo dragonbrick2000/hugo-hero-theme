@@ -231,3 +231,36 @@ footer::after {
     margin-top: 30px;
     opacity: 0.3;
 }
+/* 1. HIỆN LẠI KHUNG CHỨA (NAV HOẶC DIV) CỦA LIÊN HỆ */
+footer div, .footer div {
+    visibility: visible !important;
+    font-size: 14px !important;
+}
+
+/* 2. CHỈ NHẮM VÀO THẺ P CHỨA SLOGAN ĐỂ XỬ LÝ */
+footer p, .footer p {
+    font-size: 0 !important; /* Làm ẩn dòng slogan cũ */
+    visibility: hidden !important;
+    margin: 10px 0 !important;
+}
+/* 3. TẠO DÒNG COPYRIGHT MỚI VÀ PHỤC HỒI HIỂN THỊ */
+footer p::before, .footer p::before {
+    content: "© 2026 Dragon Brick" !important;
+    font-size: 14px !important; /* Hiện lại cỡ chữ chuẩn */
+    visibility: visible !important;
+    display: block !important;
+    color: #ffffff !important;
+    margin-bottom: 5px !important;
+}
+
+/* 4. ĐẢM BẢO CÁC LINK LIÊN HỆ (EMAIL/PHONE) KHÔNG BỊ ẨN */
+footer a, .footer a {
+    font-size: 13px !important; /* Cho hiện lại cỡ chữ nút liên hệ */
+    visibility: visible !important;
+    display: inline-block !important;
+    background: #222 !important;
+    color: #fff !important;
+    padding: 6px 15px !important;
+    border-radius: 20px !important;
+    margin: 5px !important;
+}
