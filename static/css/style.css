@@ -231,42 +231,47 @@ footer::after {
     margin-top: 30px;
     opacity: 0.3;
 }
-/* 1. RESET FOOTER VỀ TRẠNG THÁI HIỆN RÕ */
+/* 1. RESET TOÀN BỘ FOOTER CHO HIỆN RÕ */
 footer p, .footer p {
     font-size: 14px !important;
-    visibility: visible !important;
-    color: transparent !important; /* Làm ẩn slogan gốc bằng cách cho màu trong suốt */
-    position: relative !important;
-    height: auto !important;
-    margin-bottom: 20px !important;
-}
-
-/* 2. CHÈN LẠI DÒNG COPYRIGHT MỚI SẠCH SẼ */
-footer p::before, .footer p::before {
-    content: "© 2026 Dragon Brick" !important;
-    color: #ffffff !important; /* Hiện màu trắng lên trên nền trong suốt */
+    color: #ffffff !important; /* Hiện màu trắng chuẩn */
     visibility: visible !important;
     display: block !important;
-    margin-bottom: 15px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    height: auto !important;
 }
 
-/* 3. ĐƯA EMAIL VÀ PHONE VỀ ĐÚNG VỊ TRÍ (CÁC VIÊN GẠCH) */
+/* 2. DÙNG CHIÊU "MẶT NẠ" ĐỂ CHE DÒNG SLOGAN */
+/* Chúng ta sẽ tạo một khối màu đen đè lên phần chữ thừa */
+footer p::after {
+    content: "" !important;
+    position: absolute !important;
+    background: #111111 !important; /* Trùng màu nền đen của footer */
+    top: 0;
+    left: 175px; /* Điều chỉnh con số này để vừa khít sau chữ Dragon Brick */
+    width: 1000px;
+    height: 100%;
+    z-index: 1;
+}
+
+/* 3. ĐƯA LIÊN HỆ LÊN TRÊN CÙNG ĐỂ KHÔNG BỊ CHE */
 footer a, .footer a {
+    position: relative !important;
+    z-index: 2 !important; /* Ưu tiên số 1 để luôn hiện rõ */
     visibility: visible !important;
-    color: #ffffff !important;
-    font-size: 13px !important;
-    background: #222 !important; /* Tạo màu nền cho viên gạch */
+    display: inline-block !important;
+    background: #222 !important;
+    color: #fff !important;
     padding: 8px 18px !important;
     border-radius: 25px !important;
-    text-decoration: none !important;
-    display: inline-block !important;
-    margin: 5px 10px !important;
+    margin: 15px 10px 5px !important;
     border: 1px solid #333 !important;
-    position: relative !important; /* Đảm bảo nó nằm trên lớp trong suốt */
+    font-size: 13px !important;
 }
 
-/* Hiệu ứng khi hover vào viên gạch */
-footer a:hover {
-    background: #d40000 !important;
-    border-color: #d40000 !important;
+/* 4. XÓA BỎ CÁC PHẦN DƯ THỪA TỪ CÁC LẦN THỬ TRƯỚC */
+footer p::before, .footer p::before {
+    content: "" !important;
+    display: none !important;
 }
