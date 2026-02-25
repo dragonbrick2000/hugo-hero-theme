@@ -231,47 +231,38 @@ footer::after {
     margin-top: 30px;
     opacity: 0.3;
 }
-/* 1. RESET TOÀN BỘ FOOTER CHO HIỆN RÕ */
+/* 1. TRẢ LẠI TÊN CHO EM: HIỆN CHỮ TRẮNG CHUẨN */
 footer p, .footer p {
     font-size: 14px !important;
-    color: #ffffff !important; /* Hiện màu trắng chuẩn */
+    color: #ffffff !important;
     visibility: visible !important;
     display: block !important;
-    position: relative !important;
+    
+    /* CHIÊU QUYẾT ĐỊNH: Chỉ cho hiện đúng 1 dòng đầu tiên */
+    display: -webkit-box !important;
+    -webkit-line-clamp: 1 !important; /* Ép nó chỉ được hiện 1 dòng */
+    -webkit-box-orient: vertical !important;
     overflow: hidden !important;
-    height: auto !important;
+    max-width: 170px !important; /* Cắt đúng sau chữ Dragon Brick */
+    margin: 0 auto 15px !important;
 }
 
-/* 2. DÙNG CHIÊU "MẶT NẠ" ĐỂ CHE DÒNG SLOGAN */
-/* Chúng ta sẽ tạo một khối màu đen đè lên phần chữ thừa */
-footer p::after {
-    content: "" !important;
-    position: absolute !important;
-    background: #111111 !important; /* Trùng màu nền đen của footer */
-    top: 0;
-    left: 175px; /* Điều chỉnh con số này để vừa khít sau chữ Dragon Brick */
-    width: 1000px;
-    height: 100%;
-    z-index: 1;
-}
-
-/* 3. ĐƯA LIÊN HỆ LÊN TRÊN CÙNG ĐỂ KHÔNG BỊ CHE */
+/* 2. CỨU EMAIL VÀ PHONE: TÁCH RIÊNG KHỎI DÒNG CHỮ BỊ CẮT */
 footer a, .footer a {
-    position: relative !important;
-    z-index: 2 !important; /* Ưu tiên số 1 để luôn hiện rõ */
     visibility: visible !important;
     display: inline-block !important;
     background: #222 !important;
     color: #fff !important;
     padding: 8px 18px !important;
     border-radius: 25px !important;
-    margin: 15px 10px 5px !important;
+    margin: 5px 10px !important;
     border: 1px solid #333 !important;
     font-size: 13px !important;
+    text-decoration: none !important;
 }
 
-/* 4. XÓA BỎ CÁC PHẦN DƯ THỪA TỪ CÁC LẦN THỬ TRƯỚC */
-footer p::before, .footer p::before {
-    content: "" !important;
+/* 3. DỌN DẸP RÁC THẢI CỦA CÁC LẦN THỬ SAI */
+footer p::before, footer p::after {
     display: none !important;
+    content: none !important;
 }
