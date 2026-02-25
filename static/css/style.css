@@ -281,7 +281,7 @@ footer p, .footer p {
 /* 2. DÙNG CHIÊU TÀNG HÌNH CHỈ RIÊNG CHO ĐOẠN SLOGAN */
 /* Chúng ta sẽ tạo một lớp phủ màu đen (trùng màu nền) đè lên đúng chữ đó */
 footer p::after {
-    content: "" !important;
+    content: "Ghép đam mê, xây giấc mơ" !important;
     position: absolute !important;
     background: #111111 !important; /* Màu đen của nền footer */
     color: #111111 !important; /* Làm chữ này trùng màu nền để biến mất */
