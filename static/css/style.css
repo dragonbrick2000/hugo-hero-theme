@@ -231,24 +231,27 @@ footer::after {
     margin-top: 30px;
     opacity: 0.3;
 }
-/* 1. XỬ LÝ DÒNG CHỮ COPYRIGHT VÀ SLOGAN */
+/* 1. TRIỆT TIÊU TOÀN BỘ CHỮ CŨ (BAO GỒM CẢ SLOGAN VÀ COPYRIGHT GỐC) */
 footer p, .footer p {
-    font-size: 0 !important; /* Làm biến mất toàn bộ dòng chữ cũ (bao gồm cả slogan) */
+    font-size: 0 !important; 
+    color: transparent !important;
     visibility: hidden !important;
-    margin-bottom: 20px !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-/* 2. CHÈN NỘI DUNG MỚI (CHỈ GIỮ LẠI NHỮNG GÌ BRO MUỐN) */
+/* 2. CHÈN LẠI DUY NHẤT MỘT DÒNG COPYRIGHT SẠCH SẼ */
 footer p::before, .footer p::before {
-    content: "© 2026 Dragon Brick" !important; /* Viết lại nội dung mới sạch sẽ */
+    content: "© 2026 Dragon Brick" !important; /* Chỉ hiện đúng dòng này */
     font-size: 14px !important; /* Hiện lại cỡ chữ chuẩn */
+    color: #ffffff !important;
     visibility: visible !important;
     display: block !important;
-    color: #ffffff !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 15px !important;
+    padding-top: 20px !important;
 }
 
-/* 3. PHỤC HỒI EMAIL VÀ PHONE (KHÔNG ĐỂ BỊ ẨN THEO THẺ P) */
+/* 3. PHỤC HỒI EMAIL VÀ PHONE (ÉP NÓ PHẢI HIỆN RA) */
 footer a, .footer a {
     font-size: 13px !important;
     visibility: visible !important;
@@ -262,8 +265,8 @@ footer a, .footer a {
     text-decoration: none !important;
 }
 
-/* Hiệu ứng hover cho ngầu */
-footer a:hover {
-    background: #d40000 !important;
-    border-color: #d40000 !important;
+/* 4. XÓA BỎ CÁC PHẦN DƯ THỪA GÂY NHÂN ĐÔI CHỮ */
+footer p::after, .footer p span, footer p small {
+    display: none !important;
+    content: none !important;
 }
