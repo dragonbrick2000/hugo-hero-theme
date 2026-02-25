@@ -231,36 +231,34 @@ footer::after {
     margin-top: 30px;
     opacity: 0.3;
 }
-/* 1. HIỆN LẠI KHUNG CHỨA (NAV HOẶC DIV) CỦA LIÊN HỆ */
-footer div, .footer div {
-    visibility: visible !important;
-    font-size: 14px !important;
-}
-
-/* 2. CHỈ NHẮM VÀO THẺ P CHỨA SLOGAN ĐỂ XỬ LÝ */
+/* 1. GIỮ CHO FOOTER HIỂN THỊ BÌNH THƯỜNG */
 footer p, .footer p {
-    font-size: 0 !important; /* Làm ẩn dòng slogan cũ */
-    visibility: hidden !important;
-    margin: 10px 0 !important;
-}
-/* 3. TẠO DÒNG COPYRIGHT MỚI VÀ PHỤC HỒI HIỂN THỊ */
-footer p::before, .footer p::before {
-    content: "© 2026 Dragon Brick" !important;
-    font-size: 14px !important; /* Hiện lại cỡ chữ chuẩn */
+    font-size: 14px !important;
     visibility: visible !important;
-    display: block !important;
     color: #ffffff !important;
-    margin-bottom: 5px !important;
 }
 
-/* 4. ĐẢM BẢO CÁC LINK LIÊN HỆ (EMAIL/PHONE) KHÔNG BỊ ẨN */
+/* 2. DÙNG CHIÊU "CHÈN ĐÈ" ĐỂ CHE DÒNG CHỮ THỪA */
+/* Chúng ta sẽ dùng chính cái nền đen để che đi phần slogan */
+footer p, .footer p {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    /* Giới hạn chiều rộng để chỉ hiện đủ dòng đầu */
+    max-width: 200px; 
+    white-space: nowrap;
+    text-overflow: ellipsis; /* Nếu dài quá nó sẽ hiện dấu ... thay vì hiện slogan */
+}
+
+/* 3. PHỤC HỒI LIÊN HỆ - ÉP NÓ XUỐNG DÒNG VÀ HIỆN RÕ */
 footer a, .footer a {
-    font-size: 13px !important; /* Cho hiện lại cỡ chữ nút liên hệ */
-    visibility: visible !important;
     display: inline-block !important;
+    visibility: visible !important;
+    font-size: 13px !important;
     background: #222 !important;
     color: #fff !important;
-    padding: 6px 15px !important;
-    border-radius: 20px !important;
-    margin: 5px !important;
+    padding: 8px 18px !important;
+    border-radius: 25px !important;
+    margin: 10px 5px !important;
+    border: 1px solid #333 !important;
 }
